@@ -1,0 +1,144 @@
+######################
+# - Conky settings - #
+######################
+update_interval 1
+total_run_times 0
+net_avg_samples 1
+cpu_avg_samples 1
+
+imlib_cache_size 0
+double_buffer yes
+no_buffers yes
+
+#####################
+# - Text settings - #
+#####################
+use_xft yes
+xftfont Liberation Sans:size=9
+override_utf8_locale yes
+text_buffer_size 2048
+
+#############################
+# - Window specifications - #
+#############################
+own_window_class Conky
+own_window no
+own_window_type override
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+alignment top_right
+gap_x 25
+gap_y 20
+minimum_size 182 0
+maximum_width 200
+
+default_bar_size 150 8
+
+#########################
+# - Graphics settings - #
+#########################
+draw_shades no
+
+default_color cccccc
+
+#White#
+color0 white
+#Orange#
+color1 E07A1F
+#Green#
+color2 4E700E
+
+#Offset
+
+# -- Lua load -- #
+#lua_load ~/.conky/clock.lua
+#lua_draw_hook_pre draw_clock
+
+TEXT
+
+##############
+# - SYSTEM - #
+##############
+${font Liberation Sans:siz=16}${color0}SYSTEM ${hr 2}
+${color0}${font Poky:size=16}S${font}${color0}${goto 1180}${voffset -8}Kernel:  ${alignr}${color0}${kernel}${color}
+${goto 1180}${font}${color0}Uptime: ${alignr}${uptime}
+
+# |--CPU
+${color0}${font Poky:size=16}P${font}${goto 1180}${voffset -8}${cpubar cpu0}
+
+# cpu1
+${goto 1180}${font}${color0}CPU1: ${font Liberation Sans:style=Bold:size=16}${color1}${cpu cpu1}%${color}${font} ${alignr}${color0}
+${goto 1180}${cpugraph cpu1 25,150 E07A1F E07A1F}
+# cpu2
+${goto 1180}${font}${color0}CPU2: ${font Liberation Sans:style=Bold:size=16}${color1}${cpu cpu2}%${color}${font} ${alignr}${color0}
+${goto 1180}${cpugraph cpu2 25,150 E07A1F E07A1F}${color}
+# cpu3
+${goto 1180}${font}${color0}CPU3: ${font Liberation Sans:style=Bold:size=16}${color1}${cpu cpu3}%${color}${font} ${alignr}${color0}
+${goto 1180}${cpugraph cpu3 25,150 E07A1F E07A1F}${color}
+# cpu4
+${goto 1180}${font}${color0}CPU4: ${font Liberation Sans:style=Bold:size=16}${color1}${cpu cpu4}%${color}${font} ${alignr}${color0}
+${goto 1180}${cpugraph cpu4 25,150 E07A1F E07A1F}${color}
+#
+#
+# 
+#${goto 1735}${font}${color0}Highest CPU:
+#${goto 1735}${color1} ${top name 1}${offset 30}${top_mem cpu 1} %
+#${goto 1735}${color0} ${top name 2}${offset 30}${top cpu 2} %
+#${goto 1735}${color0} ${top name 3}${offset 30}${top cpu 3} %
+
+############
+############
+# |--MEM
+${color0}${font Poky:size=16}M${font}${color}${goto 1180}${voffset -7}${font}${color0}RAM: ${font Liberation Sans:style=Bold:size=16}${color1}$memperc% ${font}${color0}Used
+${goto 1180}${membar}
+${goto 1180}${font}${color0}${mem} / ${memmax}${font}${color0} Used
+
+${goto 1180}${font}${color0}Highest MEM:
+${goto 1180}${color1} ${top_mem name 1}		${top_mem mem 1} %
+${goto 1180}${color0} ${top_mem name 2}		${top_mem mem 2} %
+${goto 1180}${color0} ${top_mem name 3}		${top_mem mem 3} %
+
+# |--Hard Drive
+# home 
+${color0}${font Poky:size=16}y${font}${color}${goto 1180}${voffset -8}${font}${color0}/home: ${font Liberation Sans:style=Bold:size=16}${color1}${fs_used_perc /}% ${font}${color0}Used
+${goto 1180}${fs_bar /}
+${goto 1180}${font}${color0}${fs_used /} / ${fs_size /} 
+#  home
+#${goto 1180} 
+#${goto 1180}${voffset -8}${font}${color0}/home: ${font Liberation Sans:style=Bold:size=16}${color1}${fs_used_perc /home}% ${font}${color0}Used
+#${goto 1180}${fs_bar /home}
+#${goto 1180}${font}${color0}${fs_used /home} / ${fs_size /home} 
+
+# HD temp
+#${goto 1735}${font}${color0}Hard Drive Temp: ${execi 300 nc localhost 7634 | cut -c33-34 ;} C
+${goto 1180}${font Liberation Sans:size=10}${color0}Hard Drive Temp: ${hddtemp /dev/sda} C
+#${goto 1180}${font}${color0}- /sda: ${hddtemp /dev/sda} C
+#${goto 1180}${font}${color0}- /sdb: ${nc localhost 7634} C
+#${goto 1180}${font}${color0}- /sdc: ${hddtemp /dev/sdc} C
+#${goto 1180}${font}${color0}- /sdd: ${hddtemp /dev/sdd} C
+
+# CPU Temp (update cpu temp every 2 seconds, requires installation of lm-sensors) 
+${goto 1735}${voffset +5}${font Liberation Sans:size=10}${color0}CPU Temp:
+${goto 1735}${font}${color0}- Core 0: ${execi 2 sensors -f | grep 'Core 0' | awk '{print $3}' | sed 's/+//' | sed 's/\.0//g'}   
+${goto 1735}${font}${color0}- Core 1: ${execi 2 sensors -f | grep 'Core 1' | awk '{print $3}' | sed 's/+//' | sed 's/\.0//g'}
+
+
+################
+# - Network -  #
+################
+${font Liberation Sans:siz=16}${color0}NETWORK ${hr 2}$color${if_existing /sys/class/net/eth0/operstate up}
+${color0}${font Poky:size=16}w${goto 1180}${font}${color0}Down ${downspeed eth0}/s ${alignr}Up ${upspeed eth0}/s
+${goto 1180}${downspeedgraph eth0 25,70 E07A1F E07A1F}${color0} ${alignr}${upspeedgraph eth0 25,70 E07A1F E07A1F}
+${goto 1180}${font}${color0}Total ${totaldown eth0} ${alignr}Total ${totalup eth0}
+${endif}${if_existing /sys/class/net/wlan0/operstate up}
+${color0}${font Poky:size=16}w${goto 1180}${font}${color0}Down ${downspeed wlan0}/s ${alignr}Up ${upspeed wlan0}/s
+${goto 1180}${downspeedgraph wlan0 25,70 E07A1F E07A1F}${color0} ${alignr}${upspeedgraph wlan0 25,70 E07A1F E07A1F}
+${goto 1180}${font}${color0}Total ${totaldown wlan0} ${alignr}Total ${totalup wlan0}
+${endif}
+#${goto 1180}${font}${color0}Total Use: ${upspeedf + downspeedf}
+
+#############
+# - NMAP -  #
+#############
+#${color0}${font Poky:size=16}z${goto 1735}${font}${color0}${execi 100 ~/.conky/nmap.pl}
