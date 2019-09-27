@@ -1,0 +1,170 @@
+######################
+# - Conky settings - #
+######################
+update_interval 1
+total_run_times 0
+net_avg_samples 1
+cpu_avg_samples 1
+draw_shades no
+imlib_cache_size 0
+double_buffer yes
+no_buffers yes
+
+#####################
+# - Text settings - #
+#####################
+use_xft yes
+xftfont Liberation Sans:size=10
+override_utf8_locale yes
+text_buffer_size 2048
+
+#############################
+# - Window specifications - #
+#############################
+own_window_class Conky
+own_window no
+own_window_type override
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+alignment top_right
+gap_x 60
+gap_y 25
+minimum_size 182 0
+maximum_width 230
+
+default_bar_size 160 8
+
+#########################
+# - Graphics settings - #
+#########################
+draw_shades no
+draw_outline no
+draw_borders no  # border around entire conky metric panel
+draw_graph_borders yes
+default_color cccccc
+
+#White#
+color0 white
+#Orange#
+color1 E07A1F
+#Green#
+color2 4E700E
+
+#Offset
+
+# -- Lua load -- #
+#lua_load ~/.conky/clock.lua
+#lua_draw_hook_pre draw_clock
+
+TEXT
+
+##############
+# - SYSTEM - #
+##############
+${font Liberation Sans:siz=16}${color0}SYSTEM ${hr 2}
+${color0}${font Poky:size=16}S${font}${color0}${goto 4875}${voffset -3}Kernel:  ${alignr}${color0}${kernel}${color}
+${goto 4875}${font}${color0}Uptime: ${alignr}${uptime}
+
+# |--CPU
+${color0}${font Poky:size=16}P${font}${goto 4875}${voffset -8}${cpubar cpu0}
+
+# cpu1
+${goto 4875}${font}${color0}CPU1: ${font Liberation Sans:style=Bold:size=16}${color1}${cpu cpu1}%${color}${font} ${alignr}${color0}
+${goto 4875}${cpugraph cpu1 35,160 E07A1F E07A1F}
+# cpu2
+${goto 4875}${font}${color0}CPU2: ${font Liberation Sans:style=Bold:size=16}${color1}${cpu cpu2}%${color}${font} ${alignr}${color0}
+${goto 4875}${cpugraph cpu2 35,160 E07A1F E07A1F}${color}
+# cpu3
+${goto 4875}${font}${color0}CPU3: ${font Liberation Sans:style=Bold:size=16}${color1}${cpu cpu3}%${color}${font} ${alignr}${color0}
+${goto 4875}${cpugraph cpu3 35,160 E07A1F E07A1F}${color}
+# cpu4
+${goto 4875}${font}${color0}CPU4: ${font Liberation Sans:style=Bold:size=16}${color1}${cpu cpu4}%${color}${font} ${alignr}${color0}
+${goto 4875}${cpugraph cpu4 35,160 E07A1F E07A1F}${color}
+# cpu5
+${goto 4875}${font}${color0}CPU5: ${font Liberation Sans:style=Bold:size=16}${color1}${cpu cpu5}%${color}${font} ${alignr}${color0}
+${goto 4875}${cpugraph cpu5 35,160 E07A1F E07A1F}
+# cpu6
+${goto 4875}${font}${color0}CPU6: ${font Liberation Sans:style=Bold:size=16}${color1}${cpu cpu6}%${color}${font} ${alignr}${color0}
+${goto 4875}${cpugraph cpu6 35,160 E07A1F E07A1F}${color}
+# cpu7
+${goto 4875}${font}${color0}CPU7: ${font Liberation Sans:style=Bold:size=16}${color1}${cpu cpu7}%${color}${font} ${alignr}${color0}
+${goto 4875}${cpugraph cpu7 35,160 E07A1F E07A1F}${color}
+# cpu8
+${goto 4875}${font}${color0}CPU8: ${font Liberation Sans:style=Bold:size=16}${color1}${cpu cpu8}%${color}${font} ${alignr}${color0}
+${goto 4875}${cpugraph cpu8 35,160 E07A1F E07A1F}${color}
+
+#
+${goto 4875}${voffset +1}${font}${color0}Highest CPU:
+${goto 4875}${color1} ${top name 1}${offset 30}${top cpu 1} %
+${goto 4875}${color0} ${top name 2}${offset 30}${top cpu 2} %
+${goto 4875}${color0} ${top name 3}${offset 30}${top cpu 3} %
+${goto 4875}${color0} ${top name 4}${offset 30}${top cpu 4} %
+
+# CPU Temp (experimental, update temp every 2 seconds)
+${goto 4875}${voffset +1}${font Liberation Sans:size=10}${color0}CPU Temp:
+${goto 4875}${offset 10}${font}${color0}- All Cores: ${offset 45}${execi 2 sensors -f | grep 'CPUTIN' | awk '{print $2}' | sed 's/+//' | sed 's/\.0//g'}
+#${goto 4875}${font}${color0}- Core 0: ${execi 2 sensors -f | grep 'Core 0' | awk '{print $3}' | sed 's/+//' | sed 's/\.0//g'}
+#${goto 4875}${font}${color0}- Core 1: ${execi 2 sensors -f | grep 'Core 1' | awk '{print $3}' | sed 's/+//' | sed 's/\.0//g'}
+#${goto 4875}${font}${color0}- Core 2: ${execi 2 sensors -f | grep 'Core 2' | awk '{print $3}' | sed 's/+//' | sed 's/\.0//g'}
+#${goto 4875}${font}${color0}- Core 3: ${execi 2 sensors -f | grep 'Core 3' | awk '{print $3}' | sed 's/+//' | sed 's/\.0//g'}
+
+############
+############
+# |--MEM
+${font Liberation Sans:siz=16}${voffset -5}${color0}RAM ${hr 2}$color
+${color0}${font Poky:size=16}M${font}${color}${goto 4875}${voffset -5}${font}${color0}RAM: ${font Liberation Sans:style=Bold:size=16}${color1}$memperc% ${font}${color0}Used
+${goto 4875}${membar}
+${goto 4875}${font}${color1}${mem} / ${memmax}${font}${color1} Used
+
+${goto 4875}${font}${color0}Highest MEM:
+${goto 4875}${color1} ${top_mem name 1}		${top_mem mem 1} %
+${goto 4875}${color0} ${top_mem name 2}		${top_mem mem 2} %
+${goto 4875}${color0} ${top_mem name 3}		${top_mem mem 3} %
+${goto 4875}${color0} ${top_mem name 4}              ${top_mem mem 4} %
+
+# |--Hard Drive
+#  slash
+${font Liberation Sans:siz=16}${voffset 5}${color0}STORAGE ${hr 2}$color
+${color0}${voffset +10}${font Poky:size=16}y${font}${color}${goto 4875}${voffset -8}${font}${color0}/: ${font Liberation Sans:style=Bold:size=16}${color1}${fs_used_perc /}% ${font}${color0}Used
+${goto 4875}${fs_bar /}
+${goto 4875}${font}${color0}${fs_used /} / ${fs_size /}
+#  home
+${goto 4875}
+${goto 4875}${voffset +5}${font}${color0}/home: ${font Liberation Sans:style=Bold:size=16}${color1}${fs_used_perc /home}% ${font}${color0}Used
+${goto 4875}${fs_bar /home}
+${goto 4875}${font}${color0}${fs_used /home} / ${fs_size /home}
+#  vm
+${goto 4875}
+${goto 4875}${voffset +5}${font}${color0}/mnt/vm: ${font Liberation Sans:style=Bold:size=16}${color1}${fs_used_perc /mnt/vm}% ${font}${color0}Used
+${goto 4875}${fs_bar /mnt/vm}
+${goto 4875}${font}${color0}${fs_used /mnt/vm} / ${fs_size /mnt/vm}
+
+# HD temp
+##${goto 4875}${font}${color0}Hard Drive Temp: ${execi 300 nc localhost 7634 | cut -c33-34 ;} C
+#${goto 4875}${voffset +5}${font Liberation Sans:size=10}${color0}Hard Drive Temp:
+#${goto 4875}${offset 10}${font}${color0}- /sda: ${offset 80}${execi while true; do sudo hddtemp /dev/sda --unit=F | awk -F ':' '{print $3}'; sleep 10; done}
+
+################
+# - Network -  #
+################
+# eth0
+${font Liberation Sans:siz=16}${voffset -10}${color0}NETWORK ${hr 2}$color${if_existing /sys/class/net/eth0/operstate up}
+${color0}${font Poky:size=16}w${goto 4875}${font}${color0}Down ${downspeed eth0}/s ${alignr}Up ${upspeed eth0}/s
+${goto 4875}${downspeedgraph eth0 25,70 E07A1F E07A1F}${color0} ${alignr}${upspeedgraph eth0 25,70 E07A1F E07A1F}
+${goto 4875}${font}${color0}Total ${totaldown eth0} ${alignr}Total ${totalup eth0}
+${endif}
+${if_existing /sys/class/net/enp5s0/operstate up}
+${color0}${font Poky:size=16}w${goto 4875}${voffset -8}${font}${color0}Down ${downspeed enp5s0}/s ${alignr}Up ${upspeed enp5s0}/s
+${goto 4875}${downspeedgraph enp5s0 50,80 E07A1F E07A1F}${color0} ${alignr}${upspeedgraph enp5s0 50,80 E07A1F E07A1F}
+${goto 4875}${font}${color0}Total ${totaldown enp5s0} ${alignr}Total ${totalup enp5s0}
+${endif}${if_existing /sys/class/net/usb0/operstate up}
+${color0}${font Poky:size=16}w${goto 4875}${font}${color0}Down ${downspeed usb0}/s ${alignr}Up ${upspeed usb0}/s
+${goto 4875}${downspeedgraph usb0 25,70 E07A1F E07A1F}${color0} ${alignr}${upspeedgraph usb0 25,70 E07A1F E07A1F}
+${goto 4875}${font}${color0}Total ${totaldown usb0} ${alignr}Total ${totalup usb0}
+${endif}
+
+#############
+# - NMAP -  #
+#############
+#${color0}${font Poky:size=16}z${goto 4875}${font}${color0}${execi 100 ~/.conky/nmap.pl}
