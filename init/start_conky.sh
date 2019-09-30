@@ -6,10 +6,51 @@
 pkg=$(basename $0)
 logger=$(which logger)
 _home=$(echo $HOME)
+PYTHON2_PATH=$(which python)
+DELAY=20     # seconds
 
-#
-# This file called by gnome session startup to start conky system monitoring for user session
-#
+# --- declarations ------------------------------------------------------------
+
+
+function host_keyword(){
+    ##
+    ## finds hostname keyword used to id conky configuration file
+    ##
+    local host
+
+    host=$(hostname)
+
+    case $host in
+
+        *libra*)
+            echo 'libra'
+            return 0
+            ;;
+
+        ubuntu1*)
+            echo 'gemini'
+            return 0
+            ;;
+
+        *scorpio*)
+            echo 'scorpio'
+            return 0
+            ;;
+
+        *)
+            logger "[WARN]: Hostname keyword cannot be identified. Exit"
+            exit 1
+            ;;
+    esac
+    #
+    # <-- end function host_keyword -->
+}
+
+
+# global vars
+KEYWORD=$(host_keyword)
+INIT_DIR="$_home/git/conky-system-monitor/${KEYWORD}"
+
 
 # test if previous init
 logger "[INFO]: pkg name detect is: $pkg"
@@ -21,33 +62,33 @@ if [[ $run_status ]]; then
 #    exit 0    # pkg running
 fi
 
-# vars
-INIT_FILES="/home/blake/git/scripts-host/library-python"
 
 # start hddtemp daemon
 # sudo hddtemp -d /dev/sda
 
 # start conky
-sleep 20
-
-PYTHON_PATH=$(which python)
+sleep $DELAY
 
 # find out what monitor is connected
-RES_INFO=$($PYTHON_PATH $PYTHON_DIR/getResolution.py | grep "current" |  awk '{print $1}')
+RES_INFO=$($PYTHON2_PATH $INIT_DIR/getResolution.py | grep "current" |  awk '{print $1}')
 
 case $RES_INFO in
+    1366)
+        conky --config=${INIT_DIR}/conkyrc-${KEYWORD}_1366X768 2>/dev/null &
+        ;;
+
     1920)
-        # home external monitor
-        conky --config=/home/blake/.conky/conkyrc-libra_1920x1080 2>/dev/null
-	;;
+        conky --config=${INIT_DIR}/conkyrc-${KEYWORD}_1920x1080 2>/dev/null &
+	    ;;
+
     2560)
-  	# Lewisville office monitor setup.  Defaulted to 1366x768 for now
-        conky --config=/home/blake/.conky/conkyrc-libra_2560x1440 2>/dev/null
-  	;;
+        conky --config=${INIT_DIR}/conkyrc-${KEYWORD}_2560x1440 2>/dev/null &
+  	    ;;
+
     *)
         # unknown defaults to conky for builti-in resolution
-        conky --config=/home/blake/.conky/conkyrc-libra_1920x1080 2>/dev/null
-	;;
+        conky --config=${INIT_DIR}/conkyrc-${KEYWORD}_1920x1080 2>/dev/null &
+	    ;;
 esac
 
 # <-- end -->
