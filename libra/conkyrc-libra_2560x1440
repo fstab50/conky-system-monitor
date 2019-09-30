@@ -103,6 +103,11 @@ ${goto 65}${color0}${fs_used /home}${color} /${fs_size /home}
 
 #|--NETWORKING
 ${font Liberation Sans:siz=17}${color5}NETWORK ${color}${color6}${hr 2}${color}
+${if_existing /sys/class/net/wlan0/operstate up}
+${goto 30}${color0}${font Poky:size=17}${font}${voffset -15}${color0}Down ${downspeed enth0}/s ${alignr}Up ${upspeed wlan0}/s
+${goto 30}${color6}${downspeedgraph wlan0 45,140 FFFFFF ECF2F7}${color6} ${alignr}${upspeedgraph wlan0 45,140 ECF2F7 FFFFFF }${color}
+${goto 30}${font}${color0}Total ${totaldown wlan0} ${alignr}Total ${totalup wlan0}
+${endif}
 ${if_existing /sys/class/net/enp0s20u2u2i5/operstate up}
 ${goto 30}${color0}${font Poky:size=17}${font}${voffset -15}${color0}Down ${downspeed enp0s20u2u2i5}/s ${alignr}Up ${upspeed enp0s20u2u2i5}/s
 ${goto 30}${color6}${downspeedgraph enp0s20u2u2i5 45,140 FFFFFF ECF2F7}${color6} ${alignr}${upspeedgraph enp0s20u2u2i5 45,140 ECF2F7 FFFFFF }${color}
