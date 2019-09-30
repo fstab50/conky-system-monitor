@@ -49,8 +49,8 @@ function host_keyword(){
 
 # global vars
 KEYWORD=$(host_keyword)
-INIT_DIR="$_home/git/conky-system-monitor/${KEYWORD}"
-
+INIT_DIR="$_home/git/conky-system-monitor"
+CONFIG_DIR="${INIT_DIR}/${KEYWORD}"
 
 # test if previous init
 logger "[INFO]: pkg name detect is: $pkg"
@@ -74,20 +74,20 @@ RES_INFO=$($PYTHON2_PATH $INIT_DIR/getResolution.py | grep "current" |  awk '{pr
 
 case $RES_INFO in
     1366)
-        conky --config=${INIT_DIR}/conkyrc-${KEYWORD}_1366X768 2>/dev/null &
+        conky --config=${CONFIG_DIR}/conkyrc-${KEYWORD}_1366X768 2>/dev/null &
         ;;
 
     1920)
-        conky --config=${INIT_DIR}/conkyrc-${KEYWORD}_1920x1080 2>/dev/null &
+        conky --config=${CONFIG_DIR}/conkyrc-${KEYWORD}_1920x1080 2>/dev/null &
 	    ;;
 
     2560)
-        conky --config=${INIT_DIR}/conkyrc-${KEYWORD}_2560x1440 2>/dev/null &
+        conky --config=${CONFIG_DIR}/conkyrc-${KEYWORD}_2560x1440 2>/dev/null &
   	    ;;
 
     *)
         # unknown defaults to conky for builti-in resolution
-        conky --config=${INIT_DIR}/conkyrc-${KEYWORD}_1920x1080 2>/dev/null &
+        conky --config=${CONFIG_DIR}/conkyrc-${KEYWORD}_1920x1080 2>/dev/null &
 	    ;;
 esac
 
