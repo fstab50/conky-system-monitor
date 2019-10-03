@@ -7,7 +7,7 @@ pkg=$(basename $0)
 logger=$(which logger)
 _home=$(echo $HOME)
 PYTHON2_PATH=$(which python)
-DELAY=20     # seconds
+DELAY=12     # seconds
 
 # --- declarations ------------------------------------------------------------
 
@@ -54,6 +54,11 @@ CONFIG_DIR="${INIT_DIR}/${KEYWORD}"
 
 # test if previous init
 logger "[INFO]: pkg name detect is: $pkg"
+logger "[INFO]: KEYWORD = $KEYWORD"
+logger "[INFO]: INIT_DIR = $INIT_DIR"
+logger "[INFO]: CONFIG_DIR = $CONFIG_DIR"
+
+# estimate conky running status
 run_status=$(ps -ef | grep $pkg | grep -v grep 2>/dev/null)
 echo -e logger "[INFO]: run status detect is: $run_status"
 
@@ -74,18 +79,22 @@ RES_INFO=$($PYTHON2_PATH $INIT_DIR/getResolution.py | grep "current" |  awk '{pr
 
 case $RES_INFO in
     1366)
+        logger "[INFO]: 1366x765 resolution identified, init appropriate conkyrc"
         conky --config=${CONFIG_DIR}/conkyrc-${KEYWORD}_1366X768 2>/dev/null &
         ;;
 
     1920)
+        logger "[INFO]: 1920x1080 resolution identified, init appropriate conkyrc"
         conky --config=${CONFIG_DIR}/conkyrc-${KEYWORD}_1920x1080 2>/dev/null &
 	    ;;
 
     2560)
+        logger "[INFO]: 2560x1440 resolution identified, init appropriate conkyrc"
         conky --config=${CONFIG_DIR}/conkyrc-${KEYWORD}_2560x1440 2>/dev/null &
   	    ;;
 
     *)
+        logger "[INFO]: Unknown screen resolution identified, starting default conky config"
         # unknown defaults to conky for builti-in resolution
         conky --config=${CONFIG_DIR}/conkyrc-${KEYWORD}_1920x1080 2>/dev/null &
 	    ;;
