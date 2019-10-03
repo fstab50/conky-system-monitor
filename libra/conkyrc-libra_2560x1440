@@ -27,39 +27,42 @@ conky.config = {
   color0 = white,       -- White
   color1 = 'E07A1F',    -- Orange
   color2 = '4E700E',     -- Green
-  color3 = 'FFB533',    -- Light Orange
+  color8 = 'BCD2EE',    -- Very lt blue
   color4 = '6693CD',    -- BlueGray
   color5 = '9FC7FA',    -- Lt BlueGray
   color6 = '5074A2',    -- Dk BlueGray
   color7 = 'ECF2F7',    -- Very Lt BlueGray
+  color8 = '33457E',    -- Darker BlueGray
+  color9 = '393C7D',    -- Darkest BlueGray
 }
 
 conky.text = [[
-${color6}Hostname: ${color}${nodename}
-${color6}Kernel:   ${color}${sysname} ${kernel}
-${color6}Uptime:   ${color}${uptime}
-
-${voffset -15}
-${font Liberation Sans:siz=17}${color5}PROC ${color}${color6}${hr 2}${color}
+${font Liberation Sans:siz=17,weight:bold}${color white}SYSTEM ${color}${font}${color6}${hr 2}${color}
+${voffset -10}
+${color5} - Hostname: ${color}${nodename}
+${color5} - Kernel:   ${color}${sysname} ${kernel}
+${color5} - Uptime:   ${color}${uptime}
+${voffset -10}
+${font Liberation Sans:siz=17,weight:bold}${color white}CPU ${color}${color6}${hr 2}${color}
 # cpu1
 ${voffset -20}
-${goto 30}${color0}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color6}CPU1: ${font Liberation Sans:style=Bold:size=17}${color white}${cpu cpu1}%${color}${font} ${alignr}${color0}
-${goto 65}${color6}${cpugraph cpu1 40,250 FFFFFF ECF2F7}${color}
+${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color5}CPU1: ${font Liberation Sans:style=Bold:size=17}${color white}${cpu cpu1}%${color}${font} ${alignr}${color0}
+${goto 65}${color8}${cpugraph cpu1 40,250 FFFFFF ECF2F7}${color}
 # cpu2
 ${voffset -20}
-${goto 30}${color0}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color6}CPU2: ${font Liberation Sans:style=Bold:size=17}${color white}${cpu cpu2}%${color}${font} ${alignr}${color0}
-${goto 65}${color6}${cpugraph cpu2 40,250 ECF2F7 FFFFFF }${color}
+${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color5}CPU2: ${font Liberation Sans:style=Bold:size=17}${color white}${cpu cpu2}%${color}${font} ${alignr}${color0}
+${goto 65}${color8}${cpugraph cpu2 40,250 ECF2F7 FFFFFF }${color}
 # cpu3
 ${voffset -20}
-${goto 30}${color0}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color6}CPU3: ${font Liberation Sans:style=Bold:size=17}${color white}${cpu cpu3}%${color}${font} ${alignr}${color0}
-${goto 65}${color6}${cpugraph cpu3 40,250 ECF2F7 FFFFFF }${color}
+${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color5}CPU3: ${font Liberation Sans:style=Bold:size=17}${color white}${cpu cpu3}%${color}${font} ${alignr}${color0}
+${goto 65}${color8}${cpugraph cpu3 40,250 ECF2F7 FFFFFF }${color}
 # cpu4
 ${voffset -20}
-${goto 30}${color0}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color6}CPU4: ${font Liberation Sans:style=Bold:size=17}${color white}${cpu cpu4}%${color}${font} ${alignr}${color0}
-${goto 65}${color6}${cpugraph cpu4 40,250 ECF2F7 FFFFFF }${color}
+${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color5}CPU4: ${font Liberation Sans:style=Bold:size=17}${color white}${cpu cpu4}%${color}${font} ${alignr}${color0}
+${goto 65}${color8}${cpugraph cpu4 40,250 ECF2F7 FFFFFF }${color}
 ${voffset -10}
-${goto 30}${font FontAwesome:size=17}${font}${goto 65}${color6}Core 0 Temperature:${goto 260}${color}${execi 2 sensors -f | grep 'Core 0' | awk '{print $3}' | sed 's/+//' | sed 's/\.0//g' | rev | cut -c 3-12 | rev}${color white}°F${color}
-${goto 30}${font FontAwesome:size=17}${font}${goto 65}${color6}Core 1 Temperature:${goto 260}${color}${execi 2 sensors -f | grep 'Core 1' | awk '{print $3}' | sed 's/+//' | sed 's/\.0//g' | rev | cut -c 3-12 | rev}${color white}°F${color}
+${goto 30}${color4}${font FontAwesome:size=17}${font}${goto 65}${color lightgrey}Core 0 Temperature:${color}${goto 260}${execi 2 sensors -f | grep 'Core 0' | awk '{print $3}' | sed 's/+//' | sed 's/\.0//g' | rev | cut -c 3-12 | rev}${color white}°F${color}
+${goto 30}${color4}${font FontAwesome:size=17}${font}${goto 65}${color lightgrey}Core 1 Temperature:${color}${goto 260}${execi 2 sensors -f | grep 'Core 1' | awk '{print $3}' | sed 's/+//' | sed 's/\.0//g' | rev | cut -c 3-12 | rev}${color white}°F${color}
 ${voffset -10}
 ${goto 30}${color6}Process Name${goto 180}PID     CPU%   MEM%
 ${goto 30}${color lightgrey}- ${top name 1}${top pid 1} ${top cpu 1} ${top mem 1}
@@ -70,13 +73,13 @@ ${goto 30}${voffset +6}${color6}Load average:${color}${goto 180}${loadavg}
 ${goto 30}${color6}Cumulative CPU:${color}${goto 180}${freq_g} GHz
 # |--MEM
 ${voffset +10}
-${font Liberation Sans:siz=17}${color5}MEMORY ${color}${color6}${hr 2}${color}
+${font Liberation Sans:siz=17,weight:bold}${color white}MEMORY ${color}${color6}${hr 2}${color}
 ${voffset -10}
-${goto 30}${color0}${font Poky:size=17}M${font}${color}${voffset -7}${font}${goto 65}${color6}RAM: ${font Liberation Sans:style=Bold:size=17}${color5}$memperc% ${font}${color0}Used${font}
-${goto 65}${color6}${membar 4, 250 E07A1F FFFFFF}${color}
+${goto 30}${color6}${font Poky:size=17}M${font}${color}${voffset -7}${font}${goto 65}${color5}RAM: ${font Liberation Sans:style=Bold:size=17}${color white}$memperc% ${font}${color5}Used${color}
+${goto 65}${color6}${membar 4, 250 FFFFFF ECF2F7}${color}
 ${goto 65}${mem} / ${memmax}
 
-${goto 30}${color0}${font Poky:size=17}M${font}${color}${voffset -7}${font}${goto 65}${color6}SWAP: ${font Liberation Sans:style=Bold:size=17}${color5}${swapperc}% ${font}${color0}Used${font}
+${goto 30}${color6}${font Poky:size=17}M${font}${color}${voffset -7}${font}${goto 65}${color5}SWAP: ${font Liberation Sans:style=Bold:size=17}${color white}${swapperc}% ${font}${color5}Used${color}
 ${goto 65}${color6}${swapbar 4, 250 FFFFFF ECF2F7}${color}
 ${goto 65}${swap} / ${swapmax}
 
@@ -86,23 +89,23 @@ ${goto 65}${color lightgrey}- ${top_mem name 2} ${top_mem mem 2} %
 ${goto 65}${color lightgrey}- ${top_mem name 3} ${top_mem mem 3} %
 # |--Hard Drive
 ${voffset +10}
-${font Liberation Sans:siz=17}${color5}STORAGE ${color}${color6}${hr 2}${color}
+${font Liberation Sans:siz=17,weight:bold}${color white}STORAGE ${color}${color6}${hr 2}${color}
 ${voffset -10}
 #  slash
-${goto 30}${color0}${font Poky:size=17}y${font}${color}${voffset -8}${font}${goto 65}${color6}/${color}: ${font Liberation Sans:style=Bold:size=17}${color white}${fs_used_perc /}% ${font}${color6}Used${color}
+${goto 30}${color0}${font Poky:size=17}y${font}${color}${voffset -8}${font}${goto 65}${color5}/${color}: ${font Liberation Sans:style=Bold:size=17}${color white}${fs_used_perc /}% ${font}${color5}Used${color}
 ${goto 65}${color6}${fs_bar 6, 250 /}${font}${color}
 ${goto 65}${color0}${fs_used /}${color} / ${fs_size /}
 # /boot
-${goto 30}${voffset +10}${color0}${font Poky:size=17}y${font}${color}${voffset -8}${font}${goto 65}${color6}/boot${color} (${color6}${fs_type /boot}${color}): ${font Liberation Sans:style=Bold:size=17}${color white}${fs_used_perc /boot}% ${font}${color6}Used${color}
+${goto 30}${voffset +10}${color0}${font Poky:size=17}y${font}${color}${voffset -8}${font}${goto 65}${color5}/boot${color} (${color5}${fs_type /boot}${color}): ${font Liberation Sans:style=Bold:size=17}${color white}${fs_used_perc /boot}% ${font}${color5}Used${color}
 ${goto 65}${color6}${fs_bar 6, 250 /boot}${font}${color}
 ${goto 65}${color0}${fs_used /boot}${color} /${fs_size /boot}
 #  home
-${goto 30}${voffset +10}${color0}${font Poky:size=17}y${font}${color}${voffset -8}${font}${goto 65}${color6}/home${color} (${color6}${fs_type /home}${color}): ${font Liberation Sans:style=Bold:size=17}${color white}${fs_used_perc /home}% ${font}${color6}Used${color}
+${goto 30}${voffset +10}${color0}${font Poky:size=17}y${font}${color}${voffset -8}${font}${goto 65}${color5}/home${color} (${color5}${fs_type /home}${color}): ${font Liberation Sans:style=Bold:size=17}${color white}${fs_used_perc /home}% ${font}${color5}Used${color}
 ${goto 65}${color6}${fs_bar 6, 250 /home}${font}${color}
 ${goto 65}${color0}${fs_used /home}${color} /${fs_size /home}
 
 #|--NETWORKING
-${voffset +10}${font Liberation Sans:siz=17}${color5}NETWORK ${color}${color6}${hr 2}${color}
+${voffset +10}${font Liberation Sans:siz=17,weight:bold}${color white}NETWORK ${color}${color6}${hr 2}${color}
 ${if_existing /sys/class/net/wlan0/operstate up}
 ${goto 30}${color0}${font Poky:size=17}${font}${voffset -25}${color0}Down ${downspeed wlan0}/s ${alignr}Up ${upspeed wlan0}/s
 ${goto 30}${color6}${downspeedgraph wlan0 45,140 FFFFFF ECF2F7}${color6} ${alignr}${upspeedgraph wlan0 45,140 ECF2F7 FFFFFF }${color}
