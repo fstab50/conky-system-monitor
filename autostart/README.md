@@ -8,10 +8,10 @@ Configuration file artifacts to autostart conky monitoring and other events that
 * * *
 ## fs location
 
-All *.desktop artifacts should be located:
+All conky automatic startup on book configurations (*.desktop files) should be located:
 
-    * ~/.config/autostart
+    *  ~/.config/autostart/
 
-on all modern Linux systems with systemd
+directory on all modern Linux systems with systemd
 
 * * *
