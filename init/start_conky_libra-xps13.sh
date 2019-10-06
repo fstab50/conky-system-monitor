@@ -1,7 +1,14 @@
 #!/usr/bin/env bash
-#
-# This file called by gnome session startup to start conky system monitoring for user session
-#
+
+###############################################################################
+#                                                                             #
+#   This file called by systemd autostart configuration at boot               #
+#   to start conky system monitoring for user session.                        #
+#                                                                             #
+#   See ~/.config/autostart or autostart/ directory in the                    #
+#   conky-system-monitor git repository                                       #
+#                                                                             #
+###############################################################################
 
 pkg=$(basename $0)
 logger=$(which logger)
@@ -23,11 +30,27 @@ fi
 # vars
 PYTHON_DIR="/home/blake/git/scripts-host/library-python"
 
-# start hddtemp daemon
-sudo hddtemp -d /dev/sda
+
+#------------------------------------------------------------------------------
+#   SSD / Harddrive Temp Monitoring                                           |
+#------------------------------------------------------------------------------
+
+# start hddtemp daemon (Not generally effective with SSD drives, only HD's)
+#sudo hddtemp -d /dev/sda
+
+
+#------------------------------------------------------------------------------
+#   Startup Delay (launch x)                                                  |
+#------------------------------------------------------------------------------
 
 # start conky
 sleep 20
+
+
+#------------------------------------------------------------------------------
+#   Print Conky output with appropriate screen                                |
+#   resolution configuration                                                  |
+#------------------------------------------------------------------------------
 
 PYTHON_PATH=$(which python)
 
