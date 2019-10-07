@@ -60,6 +60,14 @@ ${goto 65}${color8}${cpugraph cpu3 40,250 ECF2F7 FFFFFF }${color}
 ${voffset -20}
 ${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color5}CPU4: ${font Liberation Sans:style=Bold:size=17}${color white}${cpu cpu4}%${color}${font} ${alignr}${color0}
 ${goto 65}${color8}${cpugraph cpu4 40,250 ECF2F7 FFFFFF }${color}
+# cpu5
+${voffset -20}
+${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color5}CPU5: ${font Liberation Sans:style=Bold:size=17}${color white}${cpu cpu5}%${color}${font} ${alignr}${color0}
+${goto 65}${color8}${cpugraph cpu5 40,250 ECF2F7 FFFFFF }${color}
+# cpu6
+${voffset -20}
+${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color5}CPU6: ${font Liberation Sans:style=Bold:size=17}${color white}${cpu cpu6}%${color}${font} ${alignr}${color0}
+${goto 65}${color8}${cpugraph CPU6 40,250 ECF2F7 FFFFFF }${color}
 ${voffset -10}
 ${goto 30}${color4}${font FontAwesome:size=17}${font}${goto 65}${color lightgrey}Core 0 Temperature:${color}${goto 260}${execi 2 sensors -f | grep 'Core 0' | awk '{print $3}' | sed 's/+//' | sed 's/\.0//g' | rev | cut -c 3-12 | rev}${color white}°F${color}
 ${goto 30}${color4}${font FontAwesome:size=17}${font}${goto 65}${color lightgrey}Core 1 Temperature:${color}${goto 260}${execi 2 sensors -f | grep 'Core 1' | awk '{print $3}' | sed 's/+//' | sed 's/\.0//g' | rev | cut -c 3-12 | rev}${color white}°F${color}
@@ -68,11 +76,10 @@ ${goto 30}${color6}Process Name${goto 180}PID     CPU%   MEM%
 ${goto 30}${color lightgrey}- ${top name 1}${top pid 1} ${top cpu 1} ${top mem 1}
 ${goto 30}${color lightgrey}- ${top name 2}${top pid 2} ${top cpu 2} ${top mem 2}
 ${goto 30}${color lightgrey}- ${top name 3}${top pid 3} ${top cpu 3} ${top mem 3}
-${goto 30}${color lightgrey}- ${top name 4}${top pid 4} ${top cpu 4} ${top mem 4}
 ${goto 30}${voffset +6}${color6}Load average:${color}${goto 180}${loadavg}
 ${goto 30}${color6}Cumulative CPU:${color}${goto 180}${freq_g} GHz
 # |--MEM
-${voffset +10}
+${voffset -10}
 ${font Liberation Sans:siz=17,weight:bold}${color white}MEMORY ${color}${color6}${hr 2}${color}
 ${voffset -10}
 ${goto 30}${color6}${font Poky:size=17}M${font}${color}${voffset -7}${font}${goto 65}${color5}RAM: ${font Liberation Sans:style=Bold:size=17}${color white}$memperc% ${font}${color5}Used${color}
@@ -82,13 +89,13 @@ ${goto 65}${mem} / ${memmax}
 ${goto 30}${color6}${font Poky:size=17}M${font}${color}${voffset -7}${font}${goto 65}${color5}SWAP: ${font Liberation Sans:style=Bold:size=17}${color white}${swapperc}% ${font}${color5}Used${color}
 ${goto 65}${color6}${swapbar 4, 250 FFFFFF ECF2F7}${color}
 ${goto 65}${swap} / ${swapmax}
-
+${voffset -5}
 ${goto 50}${font}${color6}Highest MEM:${color}
 ${goto 65}${color lightgrey}- ${top_mem name 1} ${top_mem mem 1} %
 ${goto 65}${color lightgrey}- ${top_mem name 2} ${top_mem mem 2} %
 ${goto 65}${color lightgrey}- ${top_mem name 3} ${top_mem mem 3} %
 # |--Hard Drive
-${voffset +10}
+${voffset 0}
 ${font Liberation Sans:siz=17,weight:bold}${color white}STORAGE ${color}${color6}${hr 2}${color}
 ${voffset -10}
 #  slash
@@ -105,14 +112,14 @@ ${goto 65}${color6}${fs_bar 6, 250 /home}${font}${color}
 ${goto 65}${color0}${fs_used /home}${color} /${fs_size /home}
 
 #|--NETWORKING
-${voffset +10}${font Liberation Sans:siz=17,weight:bold}${color white}NETWORK ${color}${color6}${hr 2}${color}
+${voffset 0}${font Liberation Sans:siz=17,weight:bold}${color white}NETWORK ${color}${color6}${hr 2}${color}
 ${if_existing /sys/class/net/wlan0/operstate up}
 ${goto 30}${color0}${font Poky:size=17}${font}${voffset -25}${color0}Down ${downspeed wlan0}/s ${alignr}Up ${upspeed wlan0}/s
 ${goto 30}${color6}${downspeedgraph wlan0 45,140 FFFFFF ECF2F7}${color6} ${alignr}${upspeedgraph wlan0 45,140 ECF2F7 FFFFFF }${color}
 ${goto 30}${font}${color0}Total ${totaldown wlan0} ${alignr}Total ${totalup wlan0}
 ${endif}
 ${if_existing /sys/class/net/enp5s0/operstate up}
-${goto 30}${color0}${font Poky:size=17}${font}${voffset -25}${color0}Down ${downspeed enp5s0}/s ${alignr}Up ${upspeed enp5s0}/s
+${goto 30}${color0}${font Poky:size=17}${font}${voffset -35}${color0}Down ${downspeed enp5s0}/s ${alignr}Up ${upspeed enp5s0}/s
 ${goto 30}${color6}${downspeedgraph enp5s0 45,140 FFFFFF ECF2F7}${color6} ${alignr}${upspeedgraph enp5s0 45,140 ECF2F7 FFFFFF }${color}
 ${goto 30}${font}${color0}Total ${totaldown enp5s0} ${alignr}Total ${totalup enp5s0}
 ${endif}
