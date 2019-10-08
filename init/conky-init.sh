@@ -27,8 +27,8 @@ function host_keyword(){
             return 0
             ;;
 
-        ubuntu1*)
-            echo 'gemini'
+        gemini* | ubuntu1*)
+            echo 'ubuntu18'
             return 0
             ;;
 
@@ -80,23 +80,23 @@ RES_INFO=$($PYTHON2_PATH $INIT_DIR/getResolution.py | grep "current" |  awk '{pr
 case $RES_INFO in
     1366)
         logger "[INFO]: 1366x765 resolution identified, init appropriate conkyrc"
-        conky --config=${CONFIG_DIR}/conkyrc-${KEYWORD}_1366X768 2>/dev/null &
+        conky --config="${CONFIG_DIR}/$(hostname)/conkyrc-${KEYWORD}_1366X768" 2>/dev/null &
         ;;
 
     1920)
         logger "[INFO]: 1920x1080 resolution identified, init appropriate conkyrc"
-        conky --config=${CONFIG_DIR}/conkyrc-${KEYWORD}_1920x1080 2>/dev/null &
+        conky --config="${CONFIG_DIR}/$(hostname)/conkyrc-${KEYWORD}_1920x1080" 2>/dev/null &
 	    ;;
 
     2560)
         logger "[INFO]: 2560x1440 resolution identified, init appropriate conkyrc"
-        conky --config=${CONFIG_DIR}/conkyrc-${KEYWORD}_2560x1440 2>/dev/null &
+        conky --config="${CONFIG_DIR}/$(hostname)/conkyrc-${KEYWORD}_2560x1440" 2>/dev/null &
   	    ;;
 
     *)
         logger "[INFO]: Unknown screen resolution identified, starting default conky config"
         # unknown defaults to conky for builti-in resolution
-        conky --config=${CONFIG_DIR}/conkyrc-${KEYWORD}_1920x1080 2>/dev/null &
+        conky --config="${CONFIG_DIR}/$(hostname)/conkyrc-${KEYWORD}_1920x1080" 2>/dev/null &
 	    ;;
 esac
 
