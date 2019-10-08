@@ -33,7 +33,7 @@ conky.config = {
   color7 = 'ECF2F7',    -- Very Lt BlueGray
   color8 = '1DD431',    -- Green highlight
   color9 = '393C7D',    -- Darkest BlueGray
-  color1 = '2062A4',    -- Graphs
+  color1 = '2062A4',    -- Winter Graphs, also FF8700
 }
 
 conky.text = [[
@@ -46,28 +46,28 @@ ${voffset -5}
 ${font Liberation Sans:siz=17,weight:bold}${color white}CPU ${color}${color 1DD431}${hr 2}${color}
 # cpu1
 ${voffset -20}
-${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color5}CPU1: ${font Liberation Sans:style=Bold:size=17}${color 2062A4}${cpu cpu1}%${color}${font} ${alignr}
-${goto 65}${color1}${cpugraph cpu1 40,250 2062A4 2062A4}${color}
+${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color5}CPU1: ${font Liberation Sans:style=Bold:size=17}${color1}${cpu cpu1}%${color}${font} ${alignr}
+${goto 65}${color9}${cpugraph cpu1 40,250 1DD431 1DD431 }${color}
 # cpu2
 ${voffset -25}
-${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color5}CPU2: ${font Liberation Sans:style=Bold:size=17}${color 2062A4}${cpu cpu2}%${color}${font} ${alignr}${color0}
+${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color5}CPU2: ${font Liberation Sans:style=Bold:size=17}${color1}${cpu cpu2}%${color}${font} ${alignr}${color0}
 ${goto 65}${color9}${cpugraph cpu2 40,250 1DD431 1DD431 }${color}
 # cpu3
 ${voffset -25}
-${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color5}CPU3: ${font Liberation Sans:style=Bold:size=17}${color 2062A4}${cpu cpu3}%${color}${font} ${alignr}${color0}
-${goto 65}${color9}${cpugraph cpu3 40,250  ECF2F7 FFFFFF }${color}
+${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color5}CPU3: ${font Liberation Sans:style=Bold:size=17}${color1}${cpu cpu3}%${color}${font} ${alignr}${color0}
+${goto 65}${color9}${cpugraph cpu3 40,250 1DD431 1DD431 }${color}
 # cpu4
 ${voffset -25}
-${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color5}CPU4: ${font Liberation Sans:style=Bold:size=17}${color 2062A4}${cpu cpu4}%${color}${font} ${alignr}${color0}
-${goto 65}${color1}${cpugraph cpu4 40,250  ECF2F7 FFFFFF }${color}
+${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color5}CPU4: ${font Liberation Sans:style=Bold:size=17}${color1}${cpu cpu4}%${color}${font} ${alignr}${color0}
+${goto 65}${color9}${cpugraph cpu4 40,250 1DD431 1DD431 }${color}
 # cpu5
 ${voffset -25}
-${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color5}CPU5: ${font Liberation Sans:style=Bold:size=17}${color 2062A4}${cpu cpu5}%${color}${font} ${alignr}${color0}
-${goto 65}${color9}${cpugraph cpu5 40,250  ECF2F7 FFFFFF }${color}
+${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color5}CPU5: ${font Liberation Sans:style=Bold:size=17}${color1}${cpu cpu5}%${color}${font} ${alignr}${color0}
+${goto 65}${color9}${cpugraph cpu5 40,250 1DD431 1DD431 }${color}
 # cpu6
 ${voffset -25}
-${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color5}CPU6: ${font Liberation Sans:style=Bold:size=17}${color 2062A4}${cpu cpu6}%${color}${font} ${alignr}${color0}
-${goto 65}${color9}${cpugraph CPU6 40,250 ECF2F7 FFFFFF }${color}
+${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color5}CPU6: ${font Liberation Sans:style=Bold:size=17}${color1}${cpu cpu6}%${color}${font} ${alignr}${color0}
+${goto 65}${color9}${cpugraph CPU6 40,250 1DD431 1DD431}${color}
 ${voffset -15}
 ${goto 30}${color4}${font FontAwesome:size=17}${font}${goto 65}${color lightgrey}CPU Temperature:${color}${goto 260}${execi 2 sensors -f | grep temp1 | awk '{print $2}' | rev | cut -c 2-20 | rev
 }${color white}°F${color}
@@ -82,11 +82,11 @@ ${goto 30}${color6}Cumulative CPU:${color}${goto 180}${freq_g} GHz
 ${voffset +5}
 ${font Liberation Sans:siz=17,weight:bold}${color white}MEMORY ${color}${color 2062A4}${hr 2}${color}
 ${voffset -15}
-${goto 30}${color6}${font Poky:size=17}M${font}${color}${voffset -7}${font}${goto 65}${color5}RAM: ${font Liberation Sans:style=Bold:size=17}${color 1DD431}$memperc% ${font}${color5}Used${color}
-${goto 65}${color2}${membar 4, 250 FFFFFF ECF2F7}${color}
+${goto 30}${color6}${font Poky:size=17}M${font}${color}${voffset -7}${font}${goto 65}${color5}RAM: ${font Liberation Sans:style=Bold:size=17}${color1}$memperc% ${font}${color5}Used${color}
+${goto 65}${color9}${membar 4, 250 FFFFFF ECF2F7}${color}
 ${goto 65}${mem} / ${memmax}
-${voffset +5}${goto 30}${color6}${font Poky:size=17}M${font}${color}${voffset -5}${font}${goto 65}${color5}SWAP: ${font Liberation Sans:style=Bold:size=17}${color 00FF1C}${swapperc}% ${font}${color5}Used${color}
-${goto 65}${color2}${swapbar 4, 250 FFFFFF ECF2F7}${color}
+${voffset +5}${goto 30}${color6}${font Poky:size=17}M${font}${color}${voffset -5}${font}${goto 65}${color5}SWAP: ${font Liberation Sans:style=Bold:size=17}${color1}${swapperc}% ${font}${color5}Used${color}
+${goto 65}${color9}${swapbar 4, 250 FFFFFF ECF2F7}${color}
 ${goto 65}${swap} / ${swapmax}
 ${voffset -10}
 ${goto 50}${font}${color6}Highest MEM:${color}
