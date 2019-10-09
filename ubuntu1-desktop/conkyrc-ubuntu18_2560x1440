@@ -6,11 +6,11 @@ conky.config = {
   alignment = 'top_right',
   text_buffer_size = 2048,
 
-  gap_x = -2540,
+  gap_x = -2545,
   gap_y = 40,
 
-  minimum_width = 325,
-  maximum_width = 325,
+  minimum_width = 350,
+  maximum_width = 350,
   minimum_height = 1440,
 
   background = true,
@@ -18,10 +18,12 @@ conky.config = {
   own_window = true,
   own_window_type = 'normal',
   own_window_argb_visual = true,
-  own_window_transparent = true,
-  own_window_argb_value = 0,
+  own_window_transparent = false,   -- Set to true for full transparency
+  own_window_argb_value = 130,      -- along with own_window_argb_value = 0
+
   own_window_hints = 'undecorated,below,skip_taskbar,skip_pager,sticky',
   update_interval = 3.0,
+  own_window_colour = '000000',
   draw_graph_borders = true,
 
   color0 = white,       -- White, Larget % Values (light schemes)
@@ -36,7 +38,7 @@ conky.config = {
 }
 
 conky.text = [[
-${font Liberation Sans:style=Bold:size=13}${color white}SYSTEM ${color}${font}${color6}${hr 2}${color}
+${font Liberation Sans:style=Bold:size=13}${color white}SYSTEM ${color}${font}${color6}${hr 2 30}${color}
 ${voffset -10}
 ${color6}    - Hostname: ${color}${nodename}
 ${color6}    - Kernel:   ${color}${sysname} ${kernel}
