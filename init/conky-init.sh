@@ -88,7 +88,7 @@ case $RES_INFO in
         conky --config="${CONFIG_DIR}/$(hostname)/conkyrc-${KEYWORD}_1920x1080" 2>/dev/null &
 	    ;;
 
-    2560)
+    2560 | 5120)
         logger "[INFO]: 2560x1440 resolution identified, init appropriate conkyrc"
         conky --config="${CONFIG_DIR}/$(hostname)/conkyrc-${KEYWORD}_2560x1440" 2>/dev/null &
   	    ;;
