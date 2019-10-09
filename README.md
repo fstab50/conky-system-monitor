@@ -67,9 +67,6 @@
 
 [![](./assets/libra3.png)](https://bitbucket.org/blakeca00/library-utilities/src/master/conky/assets/libra3.png)
 
-[![](./assets/libra4.png)](https://bitbucket.org/blakeca00/library-utilities/src/master/conky/assets/libra4.png)
-
-
 * * *
 ### Conky Setup -- Libra XPS13 Developer Edition Laptop (2019 - 2020)
 * * *
