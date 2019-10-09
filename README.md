@@ -71,6 +71,16 @@
 
 
 * * *
+### Conky Setup -- Libra XPS13 Developer Edition Laptop (2019 - 2020)
+* * *
+
+[![libra-FC30a](./assets/2019-10_libra_conky_small.png)](http://images.awspros.world/conky-configurations/2019-10_libra_conky.png)
+
+<p align="center">
+    <a href="http://images.awspros.world/conky-configurations/2019-10_libra_conky.png" target="_blank"><img src="./assets/2019-10_libra_conky_small.png">
+</p>
+
+* * *
 
 ## conky file contents
 * * *
