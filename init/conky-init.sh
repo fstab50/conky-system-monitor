@@ -46,17 +46,14 @@ function host_keyword(){
     # <-- end function host_keyword -->
 }
 
-
 # global vars
 KEYWORD=$(host_keyword)
-INIT_DIR="$_home/git/conky-system-monitor"
-CONFIG_DIR="${INIT_DIR}/${KEYWORD}"
+ROOT_DIR="$_home/git/conky-system-monitor"
 
 # test if previous init
 logger "[INFO]: pkg name detect is: $pkg"
 logger "[INFO]: KEYWORD = $KEYWORD"
-logger "[INFO]: INIT_DIR = $INIT_DIR"
-logger "[INFO]: CONFIG_DIR = $CONFIG_DIR"
+logger "[INFO]: ROOT_DIR = $ROOT_DIR"
 
 # estimate conky running status
 run_status=$(ps -ef | grep $pkg | grep -v grep 2>/dev/null)
@@ -75,30 +72,34 @@ fi
 sleep $DELAY
 
 # find out what monitor is connected
-RES_INFO=$($PYTHON2_PATH $INIT_DIR/getResolution.py | grep "current" |  awk '{print $1}')
+RES_INFO=$($PYTHON2_PATH $ROOT_DIR/getResolution.py | grep "current" |  awk '{print $1}')
 
 case $RES_INFO in
     1366)
         logger "[INFO]: 1366x765 resolution identified, init appropriate conkyrc"
-        conky --config="${CONFIG_DIR}/$(hostname)/conkyrc-${KEYWORD}_1366X768" 2>/dev/null &
+        conky --config="${ROOT_DIR}/$(hostname)/conkyrc-${KEYWORD}_1366X768" 2>/dev/null &
         ;;
 
     1920)
         logger "[INFO]: 1920x1080 resolution identified, init appropriate conkyrc"
-        conky --config="${CONFIG_DIR}/$(hostname)/conkyrc-${KEYWORD}_1920x1080" 2>/dev/null &
+        conky --config="${ROOT_DIR}/$(hostname)/conkyrc-${KEYWORD}_1920x1080" 2>/dev/null &
 	    ;;
 
     2560 | 5120)
         logger "[INFO]: 2560x1440 resolution identified, init appropriate conkyrc"
-        conky --config="${CONFIG_DIR}/$(hostname)/conkyrc-${KEYWORD}_2560x1440" 2>/dev/null &
+        #conky --config="${ROOT_DIR}/$(hostname)/conkyrc-${KEYWORD}_2560x1440" 2>/dev/null &
+        echo "conky --config=${ROOT_DIR}/$(hostname)/conkyrc-${KEYWORD}_2560x1440"
   	    ;;
 
     *)
         logger "[INFO]: Unknown screen resolution identified, starting default conky config"
         # unknown defaults to conky for builti-in resolution
-        conky --config="${CONFIG_DIR}/$(hostname)/conkyrc-${KEYWORD}_1920x1080" 2>/dev/null &
+        conky --config="${ROOT_DIR}/$(hostname)/conkyrc-${KEYWORD}_1920x1080" 2>/dev/null &
 	    ;;
 esac
+
+
+set +x
 
 # <-- end -->
 
