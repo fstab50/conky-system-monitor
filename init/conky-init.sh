@@ -87,8 +87,7 @@ case $RES_INFO in
 
     2560 | 5120)
         logger "[INFO]: 2560x1440 resolution identified, init appropriate conkyrc"
-        #conky --config="${ROOT_DIR}/$(hostname)/conkyrc-${KEYWORD}_2560x1440" 2>/dev/null &
-        echo "conky --config=${ROOT_DIR}/$(hostname)/conkyrc-${KEYWORD}_2560x1440"
+        conky --config="${ROOT_DIR}/$(hostname)/conkyrc-${KEYWORD}_2560x1440" 2>/dev/null &
   	    ;;
 
     *)
