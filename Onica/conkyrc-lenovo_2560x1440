@@ -69,6 +69,14 @@ ${goto 65}${color9}${cpugraph cpu5 40,250 1DD431 277886 }${color}
 ${voffset -25}
 ${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color5}CPU6: ${goto 70}${font Liberation Sans:style=Bold:size=16}${color0}${cpu cpu6}%${color}${font} ${alignr}${color0}
 ${goto 65}${color9}${cpugraph CPU6 40,250 1DD431 277886}${color}
+# cpu7
+${voffset -25}
+${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color5}CPU7: ${goto 70}${font Liberation Sans:style=Bold:size=16}${color0}${cpu cpu7}%${color}${font} ${alignr}${color0}
+${goto 65}${color9}${cpugraph CPU7 40,250 1DD431 277886}${color}
+# cpu8
+${voffset -25}
+${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color5}CPU8: ${goto 70}${font Liberation Sans:style=Bold:size=16}${color0}${cpu cpu8}%${color}${font} ${alignr}${color0}
+${goto 65}${color9}${cpugraph CPU8 40,250 1DD431 277886}${color}
 ${voffset -15}
 ${goto 30}${color4}${font FontAwesome:size=17}${font}${goto 65}${color lightgrey}CPU Temp IN:${color}${goto 260}${execi 2 sensors -f | grep CPUTIN | awk '{print $2}' | rev | cut -c 2-20 | rev}${color white}F${color}
 ${voffset -10}
