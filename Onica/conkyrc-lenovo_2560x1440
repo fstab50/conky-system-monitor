@@ -90,7 +90,7 @@ ${goto 30}${color lightgrey}- ${top name 2}${top pid 2} ${top cpu 2} ${top mem 2
 ${goto 30}${color lightgrey}- ${top name 3}${top pid 3} ${top cpu 3} ${top mem 3}
 ${goto 30}${voffset +6}${color6}Load average:${color}${goto 180}${loadavg}
 # |--MEM
-${voffset -5}
+${voffset -15}
 ${font Liberation Sans:style=Bold:size=13}${color white}MEMORY ${color}${color6}${hr 2}${color}
 ${voffset -20}
 ${goto 30}${color6}${font Poky:size=17}M${font}${color}${voffset -7}${font}${goto 65}${color5}RAM: ${goto 70}${font Liberation Sans:style=Bold:size=16}${color0}$memperc% ${font}${color5}Used${color}
@@ -128,6 +128,6 @@ ${endif}
 ${if_existing /sys/class/net/enx9cebe82f4396/operstate up}
 ${voffset -5}${goto 30}${color0}${font Poky:size=16}${font}${voffset -40}${color0}Down ${downspeed enx9cebe82f4396}/s ${alignr}Up ${upspeed enx9cebe82f4396}/s
 ${goto 30}${color6}${downspeedgraph enx9cebe82f4396 40,140 FFFFFF ECF2F7}${color6} ${alignr}${upspeedgraph enx9cebe82f4396 40,140 ECF2F7 FFFFFF }${color}
-${goto 30}${font}${color0}Total ${totaldown enx9cebe82f4396} ${alignr}Total ${totalup enx9cebe82f4396}
+${goto 30}${font}${voffset -5}${color0}Total ${totaldown enx9cebe82f4396} ${alignr}Total ${totalup enx9cebe82f4396}
 ${endif}
 ]]
