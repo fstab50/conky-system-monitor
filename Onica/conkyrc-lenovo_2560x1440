@@ -126,7 +126,7 @@ ${goto 30}${color6}${downspeedgraph wlan0 40,140 FFFFFF ECF2F7}${color6} ${align
 ${goto 30}${font}${color0}Total ${totaldown wlan0} ${alignr}Total ${totalup wlan0}
 ${endif}
 ${if_existing /sys/class/net/enx9cebe82f4396/operstate up}
-${voffset -5}${goto 30}${color0}${font Poky:size=16}${font}${voffset -40}${color0}Down ${downspeed enp5s0}/s ${alignr}Up ${upspeed enx9cebe82f4396}/s
+${voffset -5}${goto 30}${color0}${font Poky:size=16}${font}${voffset -40}${color0}Down ${downspeed enx9cebe82f4396}/s ${alignr}Up ${upspeed enx9cebe82f4396}/s
 ${goto 30}${color6}${downspeedgraph enx9cebe82f4396 40,140 FFFFFF ECF2F7}${color6} ${alignr}${upspeedgraph enx9cebe82f4396 40,140 ECF2F7 FFFFFF }${color}
 ${goto 30}${font}${color0}Total ${totaldown enx9cebe82f4396} ${alignr}Total ${totalup enx9cebe82f4396}
 ${endif}
