@@ -1,0 +1,125 @@
+conky.config = {
+  use_spacer = 'left',
+  pad_percents = 10,
+  font = 'DejaVu Sans Mono:size=10',
+  use_xft = true,
+  alignment = 'top_right',
+  text_buffer_size = 2048,
+
+  gap_x = -2555,
+  gap_y = 40,
+
+  minimum_width = 350,
+  maximum_width = 350,
+  minimum_height = 1440,
+
+  background = true,
+  double_buffer = true,
+  own_window = true,
+  own_window_type = 'normal',
+  own_window_argb_visual = true,
+  own_window_transparent = false,   -- Set to true for full transparency
+  own_window_argb_value = 130,      -- along with own_window_argb_value = 0
+
+  own_window_hints = 'undecorated,below,skip_taskbar,skip_pager,sticky',
+  update_interval = 3.0,
+  own_window_colour = '000000',
+  draw_graph_borders = true,
+
+  color0 = white,       -- White, Larget % Values (light schemes)
+  color1 = '2062A4',    -- Winter Graphs, Large % Values (dark schemes), also FF8700
+  color2 = '4E700E',     -- Green, Lime Green: 1DD431
+  color4 = '6693CD',    -- BlueGray
+  color5 = '9FC7FA',    -- Lt BlueGray
+  color6 = '5074A2',    -- Dk BlueGray
+  color7 = 'ECF2F7',    -- Very Lt BlueGray
+  color8 = '1DD431',    -- Green highlight
+  color9 = '393C7D',    -- Darkest BlueGray
+}
+
+conky.text = [[
+${font Liberation Sans:style=Bold:size=13}${color white}SYSTEM ${color}${font}${color6}${hr 2 30}${color}
+${voffset -10}
+${color6}    - Hostname: ${color}${nodename}
+${color6}    - Kernel:   ${color}${sysname} ${kernel}
+${color6}    - Uptime:   ${color}${uptime}
+${voffset -5}
+${font Liberation Sans:style=Bold:size=13}${color white}CPU ${color}${color6}${hr 2}${color}
+# cpu1
+${voffset -20}
+${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color5}CPU1: ${goto 70}${font Liberation Sans:style=Bold:size=16}${color0}${cpu cpu1}%${color}${font} ${alignr}
+${goto 65}${color9}${cpugraph cpu1 40,250 277886 1DD431}${color}
+# cpu2
+${voffset -25}
+${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color5}CPU2: ${goto 70}${font Liberation Sans:style=Bold:size=16}${color0}${cpu cpu2}%${color}${font} ${alignr}
+${goto 65}${color9}${cpugraph cpu2 40,250 1DD431 277886}${color}
+# cpu3
+${voffset -25}
+${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color5}CPU3: ${goto 70}${font Liberation Sans:style=Bold:size=16}${color0}${cpu cpu3}%${color}${font} ${alignr}${color0}
+${goto 65}${color9}${cpugraph cpu3 40,250 1DD431 277886 }${color}
+# cpu4
+${voffset -25}
+${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color5}CPU4: ${goto 70}${font Liberation Sans:style=Bold:size=16}${color0}${cpu cpu4}%${color}${font} ${alignr}${color0}
+${goto 65}${color9}${cpugraph cpu4 40,250 1DD431 277886 }${color}
+# cpu5
+${voffset -25}
+${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color5}CPU5: ${goto 70}${font Liberation Sans:style=Bold:size=16}${color0}${cpu cpu5}%${color}${font} ${alignr}${color0}
+${goto 65}${color9}${cpugraph cpu5 40,250 1DD431 277886 }${color}
+# cpu6
+${voffset -25}
+${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color5}CPU6: ${goto 70}${font Liberation Sans:style=Bold:size=16}${color0}${cpu cpu6}%${color}${font} ${alignr}${color0}
+${goto 65}${color9}${cpugraph CPU6 40,250 1DD431 277886}${color}
+${voffset -15}
+${goto 30}${color4}${font FontAwesome:size=17}${font}${goto 65}${color lightgrey}CPU Temp IN:${color}${goto 260}${execi 2 sensors -f | grep CPUTIN | awk '{print $2}' | rev | cut -c 2-20 | rev}${color white}F${color}
+${voffset -10}
+${goto 30}${color6}Process Name${goto 180}PID     CPU%   MEM%
+${goto 30}${color lightgrey}- ${top name 1}${top pid 1} ${top cpu 1} ${top mem 1}
+${goto 30}${color lightgrey}- ${top name 2}${top pid 2} ${top cpu 2} ${top mem 2}
+${goto 30}${color lightgrey}- ${top name 3}${top pid 3} ${top cpu 3} ${top mem 3}
+${goto 30}${voffset +6}${color6}Load average:${color}${goto 180}${loadavg}
+${goto 30}${color6}Cumulative CPU:${color}${goto 180}${freq_g} GHz
+# |--MEM
+${voffset +5}
+${font Liberation Sans:style=Bold:size=13}${color white}MEMORY ${color}${color6}${hr 2}${color}
+${voffset -15}
+${goto 30}${color6}${font Poky:size=17}M${font}${color}${voffset -7}${font}${goto 65}${color5}RAM: ${goto 70}${font Liberation Sans:style=Bold:size=16}${color0}$memperc% ${font}${color5}Used${color}
+${goto 65}${color9}${membar 4, 250 FFFFFF ECF2F7}${color}
+${goto 65}${mem} / ${memmax}
+${voffset +5}${goto 30}${color6}${font Poky:size=17}M${font}${color}${voffset -5}${font}${goto 65}${color5}SWAP: ${goto 70}${font Liberation Sans:style=Bold:size=16}${color0}${swapperc}% ${font}${color5}Used${color}
+${goto 65}${color9}${swapbar 4, 250 FFFFFF ECF2F7}${color}
+${goto 65}${swap} / ${swapmax}
+${voffset -10}
+${goto 50}${font}${color6}Highest MEM:${color}
+${goto 65}${color lightgrey}- ${top_mem name 1} ${top_mem mem 1} %
+${goto 65}${color lightgrey}- ${top_mem name 2} ${top_mem mem 2} %
+${goto 65}${color lightgrey}- ${top_mem name 3} ${top_mem mem 3} %
+# |--Hard Drive
+${voffset 0}
+${font Liberation Sans:style=Bold:size=13}${color white}STORAGE ${color}${color6}${hr 2}${color}
+${voffset -10}
+#  slash
+${goto 30}${color0}${font Poky:size=17}y${font}${color}${voffset -8}${font}${goto 65}${color5}/${color}: ${font Liberation Sans:style=Bold:size=16}${color white}${goto 50}${fs_used_perc /}% ${font}${color5}Used${color}
+${goto 65}${color6}${fs_bar 6, 250 /}${font}${color}
+${goto 65}${color0}${fs_used /}${color} / ${fs_size /}
+# /boot
+${goto 30}${voffset +10}${color0}${font Poky:size=17}y${font}${color}${voffset -8}${font}${goto 65}${color5}/boot${color} (${color5}${fs_type /boot}${color}): ${font Liberation Sans:style=Bold:size=16}${goto 145}${color white}${fs_used_perc /boot}% ${font}${color5}Used${color}
+${goto 65}${color6}${fs_bar 6, 250 /boot}${font}${color}
+${goto 65}${color0}${fs_used /boot}${color} /${fs_size /boot}
+#  home
+${goto 30}${voffset +10}${color0}${font Poky:size=17}y${font}${color}${voffset -8}${font}${goto 65}${color5}/home${color} (${color5}${fs_type /home}${color}): ${font Liberation Sans:style=Bold:size=16}${goto 145}${color white}${fs_used_perc /home}% ${font}${color5}Used${color}
+${goto 65}${color6}${fs_bar 6, 250 /home}${font}${color}
+${goto 65}${color0}${fs_used /home}${color} /${fs_size /home}
+
+#|--NETWORKING
+${voffset 0}${font Liberation Sans:style=Bold:size=13}${color white}NETWORK ${color}${color6}${hr 2}${color}
+${if_existing /sys/class/net/wlan0/operstate up}
+${goto 30}${color0}${font Poky:size=16}${font}${voffset -40}${color0}Down ${downspeed wlan0}/s ${alignr}Up ${upspeed wlan0}/s
+${goto 30}${color6}${downspeedgraph wlan0 40,140 FFFFFF ECF2F7}${color6} ${alignr}${upspeedgraph wlan0 40,140 ECF2F7 FFFFFF }${color}
+${goto 30}${font}${color0}Total ${totaldown wlan0} ${alignr}Total ${totalup wlan0}
+${endif}
+${if_existing /sys/class/net/enp5s0/operstate up}
+${goto 30}${color0}${font Poky:size=16}${font}${voffset -40}${color0}Down ${downspeed enp5s0}/s ${alignr}Up ${upspeed enp5s0}/s
+${goto 30}${color6}${downspeedgraph enp5s0 40,140 FFFFFF ECF2F7}${color6} ${alignr}${upspeedgraph enp5s0 40,140 ECF2F7 FFFFFF }${color}
+${goto 30}${font}${color0}Total ${totaldown enp5s0} ${alignr}Total ${totalup enp5s0}
+${endif}
+]]
