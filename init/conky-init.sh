@@ -32,6 +32,11 @@ function host_keyword(){
             return 0
             ;;
 
+        *[Oo]nica*)
+            echo 'lenovo'
+            return 0
+            ;;
+
         *scorpio*)
             echo 'scorpio'
             return 0
