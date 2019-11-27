@@ -1,16 +1,16 @@
 conky.config = {
   use_spacer = 'left',
-  pad_percents = 3,
+  pad_percents = 10,
   font = 'DejaVu Sans Mono:size=10',
   use_xft = true,
   alignment = 'top_right',
   text_buffer_size = 2048,
 
   gap_x = 10,
-  gap_y = 40,
+  gap_y = 30,
 
-  minimum_width = 325,
-  maximum_width = 325,
+  minimum_width = 350,
+  maximum_width = 350,
   minimum_height = 1440,
 
   background = true,
@@ -18,81 +18,108 @@ conky.config = {
   own_window = true,
   own_window_type = 'normal',
   own_window_argb_visual = true,
-  own_window_transparent = true,
-  own_window_argb_value = 0,
+  own_window_transparent = false,   -- Set to true for full transparency
+  own_window_argb_value = 130,      -- along with own_window_argb_value = 0
+
   own_window_hints = 'undecorated,below,skip_taskbar,skip_pager,sticky',
   update_interval = 3.0,
+  own_window_colour = '000000',
   draw_graph_borders = true,
 
-  color0 = white,       -- White
-  color1 = 'E07A1F',    -- Orange
-  color2 = '4E700E',     -- Green
-  color3 = 'FFB533',    -- Light Orange
+  color0 = white,       -- White, Larget % Values (light schemes)
+  color1 = '2062A4',    -- Winter Graphs, Large % Values (dark schemes), also FF8700
+  color2 = '4E700E',     -- Green, Lime Green: 1DD431
   color4 = '6693CD',    -- BlueGray
   color5 = '9FC7FA',    -- Lt BlueGray
   color6 = '5074A2',    -- Dk BlueGray
   color7 = 'ECF2F7',    -- Very Lt BlueGray
+  color8 = '1DD431',    -- Green highlight
+  color9 = '393C7D',    -- Darkest BlueGray
 }
 
 conky.text = [[
-${color6}Hostname: ${color}${nodename}
-${color6}Kernel:   ${color}${sysname} ${kernel}
-${color6}Uptime:   ${color}${uptime}
-
-${voffset -25}
-${font Liberation Sans:siz=17}${color5}PROC ${color}${color6}${hr 2}${color}
+${voffset -15}
+${font Liberation Sans:style=Bold:size=13}${color white}SYSTEM ${color}${font}${color6}${hr 2 30}${color}
+${voffset -10}
+${color6}    - Hostname: ${color}${nodename}
+${color6}    - Kernel:   ${color}${sysname} ${kernel}
+${color6}    - Uptime:   ${color}${uptime}
+${voffset -10}
+${font Liberation Sans:style=Bold:size=13}${color white}CPU ${color}${color6}${hr 2}${color}
 # cpu1
 ${voffset -20}
-${goto 30}${color0}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color6}CPU1: ${font Liberation Sans:style=Bold:size=17}${color white}${cpu cpu1}%${color}${font} ${alignr}${color0}
-${goto 65}${color6}${cpugraph cpu1 40,250 FFFFFF ECF2F7}${color}
+${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color5}CPU1: ${goto 70}${font Liberation Sans:style=Bold:size=16}${voffset -3}${color0}${cpu cpu1}%${color}${font} ${alignr}
+${goto 65}${color9}${cpugraph cpu1 40,250 277886 1DD431}${color}
 # cpu2
-${voffset -20}
-${goto 30}${color0}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color6}CPU2: ${font Liberation Sans:style=Bold:size=17}${color white}${cpu cpu2}%${color}${font} ${alignr}${color0}
-${goto 65}${color6}${cpugraph cpu2 40,250 ECF2F7 FFFFFF }${color}
+${voffset -25}
+${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color5}CPU2: ${goto 70}${font Liberation Sans:style=Bold:size=16}${voffset -3}${color0}${cpu cpu2}%${color}${font} ${alignr}
+${goto 65}${color9}${cpugraph cpu2 40,250 1DD431 277886}${color}
 # cpu3
-${voffset -20}
-${goto 30}${color0}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color6}CPU3: ${font Liberation Sans:style=Bold:size=17}${color white}${cpu cpu3}%${color}${font} ${alignr}${color0}
-${goto 65}${color6}${cpugraph cpu3 40,250 ECF2F7 FFFFFF }${color}
+${voffset -30}
+${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color5}CPU3: ${goto 70}${font Liberation Sans:style=Bold:size=16}${voffset -3}${color0}${cpu cpu3}%${color}${font} ${alignr}${color0}
+${goto 65}${color9}${cpugraph cpu3 40,250 1DD431 277886 }${color}
 # cpu4
+${voffset -30}
+${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color5}CPU4: ${goto 70}${font Liberation Sans:style=Bold:size=16}${voffset -3}${color0}${cpu cpu4}%${color}${font} ${alignr}${color0}
+${goto 65}${color9}${cpugraph cpu4 40,250 1DD431 277886 }${color}
+# cpu5
+${voffset -30}
+${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color5}CPU5: ${goto 70}${font Liberation Sans:style=Bold:size=16}${voffset -3}${color0}${cpu cpu5}%${color}${font} ${alignr}${color0}
+${goto 65}${color9}${cpugraph cpu5 40,250 1DD431 277886 }${color}
+# cpu6
+${voffset -30}
+${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color5}CPU6: ${goto 70}${font Liberation Sans:style=Bold:size=16}${voffset -3}${color0}${cpu cpu6}%${color}${font} ${alignr}${color0}
+${goto 65}${color9}${cpugraph CPU6 40,250 1DD431 277886}${color}
+# cpu7
+${voffset -30}
+${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color5}CPU7: ${goto 70}${font Liberation Sans:style=Bold:size=16}${voffset -3}${color0}${cpu cpu7}%${color}${font} ${alignr}${color0}
+${goto 65}${color9}${cpugraph CPU7 40,250 1DD431 277886}${color}
+# cpu8
+${voffset -30}
+${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color5}CPU8: ${goto 70}${font Liberation Sans:style=Bold:size=16}${voffset -3}${color0}${cpu cpu8}%${color}${font} ${alignr}${color0}
+${goto 65}${color9}${cpugraph CPU8 40,250 1DD431 277886}${color}
 ${voffset -20}
-${goto 30}${color0}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color6}CPU4: ${font Liberation Sans:style=Bold:size=17}${color white}${cpu cpu4}%${color}${font} ${alignr}${color0}
-${goto 65}${color6}${cpugraph cpu4 40,250 ECF2F7 FFFFFF }${color}
+${goto 30}${color4}${font FontAwesome:size=17}${font}${goto 65}${color lightgrey}Core 0 Temp:${color}${goto 240}${execi 2 sensors -f | grep 'Core 0' | awk -F ':' '{print $2}' | awk '{print $1}'}
+${goto 65}${color lightgrey}Core 1 Temp:${color}${goto 240}${execi 2 sensors -f | grep 'Core 1' | awk -F ':' '{print $2}' | awk '{print $1}'}
+${goto 65}${color lightgrey}Core 2 Temp:${color}${goto 240}${execi 2 sensors -f | grep 'Core 2' | awk -F ':' '{print $2}' | awk '{print $1}'}
+${goto 65}${color lightgrey}Core 3 Temp:${color}${goto 240}${execi 2 sensors -f | grep 'Core 3' | awk -F ':' '{print $2}' | awk '{print $1}'}
 ${voffset -10}
-${goto 30}${font FontAwesome:size=17}${font}${goto 65}${color6}Core 0 Temperature:${goto 260}${color}${execi 2 sensors -f | grep 'Core 0' | awk '{print $3}' | sed 's/+//' | sed 's/\.0//g' | rev | cut -c 3-12 | rev}${color white}°F${color}
-${goto 30}${font FontAwesome:size=17}${font}${goto 65}${color6}Core 1 Temperature:${goto 260}${color}${execi 2 sensors -f | grep 'Core 1' | awk '{print $3}' | sed 's/+//' | sed 's/\.0//g' | rev | cut -c 3-12 | rev}${color white}°F${color}
+${goto 30}${voffset 0}${color6}Load average:${color}${goto 180}${loadavg}
 # |--MEM
-${voffset +5}
-${font Liberation Sans:siz=17}${color5}MEMORY ${color}${color6}${hr 2}${color}
 ${voffset -10}
-${goto 30}${color0}${font Poky:size=17}M${font}${color}${voffset -7}${font}${goto 65}${color6}RAM: ${font Liberation Sans:style=Bold:size=17}${color5}$memperc% ${font}${color0}Used${font}
-${goto 65}${color6}${membar 4, 250 E07A1F FFFFFF}${color}
+${font Liberation Sans:style=Bold:size=13}${color white}MEMORY ${color}${color6}${hr 2}${color}
+${voffset -20}
+${goto 30}${color6}${font Poky:size=17}M${font}${color}${voffset -7}${font}${goto 65}${color5}RAM: ${goto 70}${font Liberation Sans:style=Bold:size=16}${color0}$memperc% ${font}${color5}Used${color}
+${goto 65}${color9}${membar 4, 250 FFFFFF ECF2F7}${color}
 ${goto 65}${mem} / ${memmax}
-
-${goto 30}${color0}${font Poky:size=17}M${font}${color}${voffset -7}${font}${goto 65}${color6}SWAP: ${font Liberation Sans:style=Bold:size=17}${color5}${swapperc}% ${font}${color0}Used${font}
-${goto 65}${color6}${swapbar 4, 250 FFFFFF ECF2F7}${color}
-${goto 65}${swap} / ${swapmax}
-# |--STORAGE
-${voffset +5}
-${font Liberation Sans:siz=17}${color5}STORAGE ${color}${color6}${hr 2}${color}
-${voffset -10}
+${voffset -15}
+# |--Hard Drive
+${voffset -5}
+${font Liberation Sans:style=Bold:size=13}${color white}STORAGE ${color}${color6}${hr 2}${color}
+${voffset -15}
 #  slash
-${goto 30}${color0}${font Poky:size=17}y${font}${color}${voffset -8}${font}${goto 65}${color6}/${color}: ${font Liberation Sans:style=Bold:size=17}${color white}${fs_used_perc /}% ${font}${color6}Used${color}
+${goto 30}${color0}${font Poky:size=17}y${font}${color}${voffset -8}${font}${goto 65}${color5}/${color}: ${font Liberation Sans:style=Bold:size=16}${color white}${goto 50}${fs_used_perc /}% ${font}${color5}Used${color}
 ${goto 65}${color6}${fs_bar 6, 250 /}${font}${color}
 ${goto 65}${color0}${fs_used /}${color} / ${fs_size /}
+# /boot
+${goto 30}${voffset +10}${color0}${font Poky:size=17}y${font}${color}${voffset -8}${font}${goto 65}${color5}/boot${color} (${color5}${fs_type /boot}${color}): ${font Liberation Sans:style=Bold:size=16}${goto 145}${color white}${fs_used_perc /boot}% ${font}${color5}Used${color}
+${goto 65}${color6}${fs_bar 6, 250 /boot}${font}${color}
+${goto 65}${color0}${fs_used /boot}${color} /${fs_size /boot}
 #  home
-${goto 30}${voffset +10}${color0}${font Poky:size=17}y${font}${color}${voffset -8}${font}${goto 65}${color6}/home${color} (${color6}${fs_type /home}${color}): ${font Liberation Sans:style=Bold:size=17}${color white}${fs_used_perc /home}% ${font}${color6}Used${color}
+${goto 30}${voffset +10}${color0}${font Poky:size=17}y${font}${color}${voffset -8}${font}${goto 65}${color5}/home${color} (${color5}${fs_type /home}${color}): ${font Liberation Sans:style=Bold:size=16}${goto 145}${color white}${fs_used_perc /home}% ${font}${color5}Used${color}
 ${goto 65}${color6}${fs_bar 6, 250 /home}${font}${color}
 ${goto 65}${color0}${fs_used /home}${color} /${fs_size /home}
+
 #|--NETWORKING
-${voffset +15}${font Liberation Sans:siz=17}${color5}NETWORK ${color}${color6}${hr 2}${color}
-${voffset -15}${if_existing /sys/class/net/wlan0/operstate up}
-${goto 30}${color0}${font Poky:size=17}${font}${voffset -15}${color0}Down ${downspeed enth0}/s ${alignr}Up ${upspeed wlan0}/s
-${goto 30}${color6}${downspeedgraph wlan0 45,140 FFFFFF ECF2F7}${color6} ${alignr}${upspeedgraph wlan0 45,140 ECF2F7 FFFFFF }${color}
+${voffset 0}${font Liberation Sans:style=Bold:size=13}${color white}NETWORK ${color}${color6}${hr 2}${color}
+${if_existing /sys/class/net/wlan0/operstate up}
+${voffset -5}${goto 30}${color0}${font Poky:size=16}${font}${voffset -40}${color0}Down ${downspeed wlan0}/s ${alignr}Up ${upspeed wlan0}/s
+${goto 30}${color6}${downspeedgraph wlan0 40,140 FFFFFF ECF2F7}${color6} ${alignr}${upspeedgraph wlan0 40,140 ECF2F7 FFFFFF }${color}
 ${goto 30}${font}${color0}Total ${totaldown wlan0} ${alignr}Total ${totalup wlan0}
 ${endif}
-${voffset -15}${if_existing /sys/class/net/enp0s20u2u2i5/operstate up}
-${goto 30}${color0}${font Poky:size=17}${font}${voffset -15}${color0}Down ${downspeed enp0s20u2u2i5}/s ${alignr}Up ${upspeed enp0s20u2u2i5}/s
-${goto 30}${color6}${downspeedgraph enp0s20u2u2i5 45,140 FFFFFF ECF2F7}${color6} ${alignr}${upspeedgraph enp0s20u2u2i5 45,140 ECF2F7 FFFFFF }${color}
-${goto 30}${font}${color0}Total ${totaldown enp0s20u2u2i5} ${alignr}Total ${totalup enp0s20u2u2i5}
+${if_existing /sys/class/net/enx9cebe82f4396/operstate up}
+${voffset -5}${goto 30}${color0}${font Poky:size=16}${font}${voffset -40}${color0}Down ${downspeed enx9cebe82f4396}/s ${alignr}Up ${upspeed enx9cebe82f4396}/s
+${goto 30}${color6}${downspeedgraph enx9cebe82f4396 40,140 FFFFFF ECF2F7}${color6} ${alignr}${upspeedgraph enx9cebe82f4396 40,140 ECF2F7 FFFFFF }${color}
+${goto 30}${font}${voffset -5}${color0}Total ${totaldown enx9cebe82f4396} ${alignr}Total ${totalup enx9cebe82f4396}
 ${endif}
 ]]
