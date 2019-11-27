@@ -18,8 +18,8 @@ conky.config = {
   own_window = true,
   own_window_type = 'normal',
   own_window_argb_visual = true,
-  own_window_transparent = false,   -- Set to true for full transparency
-  own_window_argb_value = 130,      -- along with own_window_argb_value = 0
+  own_window_transparent = true,   -- Set to true for full transparency, false for shaded background
+  own_window_argb_value = 0,      -- along with own_window_argb_value = 0.  Value = > 100 for shaded background
 
   own_window_hints = 'undecorated,below,skip_taskbar,skip_pager,sticky',
   update_interval = 3.0,
