@@ -6,7 +6,7 @@ conky.config = {
   alignment = 'top_right',
   text_buffer_size = 2048,
 
-  gap_x = -2555,
+  gap_x = 10,
   gap_y = 40,
 
   minimum_width = 350,
@@ -38,12 +38,13 @@ conky.config = {
 }
 
 conky.text = [[
+${voffset -15}
 ${font Liberation Sans:style=Bold:size=13}${color white}SYSTEM ${color}${font}${color6}${hr 2 30}${color}
 ${voffset -10}
 ${color6}    - Hostname: ${color}${nodename}
 ${color6}    - Kernel:   ${color}${sysname} ${kernel}
 ${color6}    - Uptime:   ${color}${uptime}
-${voffset -5}
+${voffset -10}
 ${font Liberation Sans:style=Bold:size=13}${color white}CPU ${color}${color6}${hr 2}${color}
 # cpu1
 ${voffset -20}
@@ -87,7 +88,7 @@ ${goto 30}${color lightgrey}- ${top name 3}${top pid 3} ${top cpu 3} ${top mem 3
 ${goto 30}${voffset +6}${color6}Load average:${color}${goto 180}${loadavg}
 ${goto 30}${color6}Cumulative CPU:${color}${goto 180}${freq_g} GHz
 # |--MEM
-${voffset -10}
+${voffset -5}
 ${font Liberation Sans:style=Bold:size=13}${color white}MEMORY ${color}${color6}${hr 2}${color}
 ${voffset -15}
 ${goto 30}${color6}${font Poky:size=17}M${font}${color}${voffset -7}${font}${goto 65}${color5}RAM: ${goto 70}${font Liberation Sans:style=Bold:size=16}${color0}$memperc% ${font}${color5}Used${color}
@@ -99,7 +100,7 @@ ${goto 65}${color lightgrey}- ${top_mem name 1} ${top_mem mem 1} %
 ${goto 65}${color lightgrey}- ${top_mem name 2} ${top_mem mem 2} %
 ${goto 65}${color lightgrey}- ${top_mem name 3} ${top_mem mem 3} %
 # |--Hard Drive
-${voffset 0}
+${voffset -5}
 ${font Liberation Sans:style=Bold:size=13}${color white}STORAGE ${color}${color6}${hr 2}${color}
 ${voffset -10}
 #  slash
@@ -116,14 +117,14 @@ ${goto 65}${color6}${fs_bar 6, 250 /home}${font}${color}
 ${goto 65}${color0}${fs_used /home}${color} /${fs_size /home}
 
 #|--NETWORKING
-${voffset 0}${font Liberation Sans:style=Bold:size=13}${color white}NETWORK ${color}${color6}${hr 2}${color}
+${voffset -5}${font Liberation Sans:style=Bold:size=13}${color white}NETWORK ${color}${color6}${hr 2}${color}
 ${if_existing /sys/class/net/wlan0/operstate up}
-${goto 30}${color0}${font Poky:size=16}${font}${voffset -40}${color0}Down ${downspeed wlan0}/s ${alignr}Up ${upspeed wlan0}/s
+${voffset -5}${goto 30}${color0}${font Poky:size=16}${font}${voffset -40}${color0}Down ${downspeed wlan0}/s ${alignr}Up ${upspeed wlan0}/s
 ${goto 30}${color6}${downspeedgraph wlan0 40,140 FFFFFF ECF2F7}${color6} ${alignr}${upspeedgraph wlan0 40,140 ECF2F7 FFFFFF }${color}
 ${goto 30}${font}${color0}Total ${totaldown wlan0} ${alignr}Total ${totalup wlan0}
 ${endif}
 ${if_existing /sys/class/net/enx9cebe82f4396/operstate up}
-${goto 30}${color0}${font Poky:size=16}${font}${voffset -40}${color0}Down ${downspeed enp5s0}/s ${alignr}Up ${upspeed enx9cebe82f4396}/s
+${voffset -5}${goto 30}${color0}${font Poky:size=16}${font}${voffset -40}${color0}Down ${downspeed enp5s0}/s ${alignr}Up ${upspeed enx9cebe82f4396}/s
 ${goto 30}${color6}${downspeedgraph enx9cebe82f4396 40,140 FFFFFF ECF2F7}${color6} ${alignr}${upspeedgraph enx9cebe82f4396 40,140 ECF2F7 FFFFFF }${color}
 ${goto 30}${font}${color0}Total ${totaldown enx9cebe82f4396} ${alignr}Total ${totalup enx9cebe82f4396}
 ${endif}
