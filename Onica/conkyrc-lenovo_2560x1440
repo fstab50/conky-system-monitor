@@ -88,9 +88,9 @@ ${goto 30}${color6}Process Name${goto 180}PID     CPU%   MEM%
 ${goto 30}${color lightgrey}- ${top name 1}${top pid 1} ${top cpu 1} ${top mem 1}
 ${goto 30}${color lightgrey}- ${top name 2}${top pid 2} ${top cpu 2} ${top mem 2}
 ${goto 30}${color lightgrey}- ${top name 3}${top pid 3} ${top cpu 3} ${top mem 3}
-${goto 30}${voffset +6}${color6}Load average:${color}${goto 180}${loadavg}
+${goto 30}${voffset 0}${color6}Load average:${color}${goto 180}${loadavg}
 # |--MEM
-${voffset -15}
+${voffset -10}
 ${font Liberation Sans:style=Bold:size=13}${color white}MEMORY ${color}${color6}${hr 2}${color}
 ${voffset -20}
 ${goto 30}${color6}${font Poky:size=17}M${font}${color}${voffset -7}${font}${goto 65}${color5}RAM: ${goto 70}${font Liberation Sans:style=Bold:size=16}${color0}$memperc% ${font}${color5}Used${color}
