@@ -79,18 +79,20 @@ ${voffset -30}
 ${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color5}CPU8: ${goto 70}${font Liberation Sans:style=Bold:size=16}${voffset -3}${color0}${cpu cpu8}%${color}${font} ${alignr}${color0}
 ${goto 65}${color9}${cpugraph CPU8 40,250 1DD431 277886}${color}
 ${voffset -20}
-${goto 30}${color4}${font FontAwesome:size=17}${font}${goto 65}${color lightgrey}CPU Temp IN:${color}${goto 260}${execi 2 sensors -f | grep CPUTIN | awk '{print $2}' | rev | cut -c 2-20 | rev}${color white}F${color}
+${goto 30}${color4}${font FontAwesome:size=17}${font}${goto 65}${color lightgrey}Core 0 Temp:${color}${goto 240}${execi 2 sensors -f | grep 'Core 0' | awk -F ':' '{print $2}' | awk '{print $1}'}
+${goto 65}${color lightgrey}Core 1 Temp:${color}${goto 240}${execi 2 sensors -f | grep 'Core 1' | awk -F ':' '{print $2}' | awk '{print $1}'}
+${goto 65}${color lightgrey}Core 2 Temp:${color}${goto 240}${execi 2 sensors -f | grep 'Core 2' | awk -F ':' '{print $2}' | awk '{print $1}'}
+${goto 65}${color lightgrey}Core 3 Temp:${color}${goto 240}${execi 2 sensors -f | grep 'Core 3' | awk -F ':' '{print $2}' | awk '{print $1}'}
 ${voffset -10}
 ${goto 30}${color6}Process Name${goto 180}PID     CPU%   MEM%
 ${goto 30}${color lightgrey}- ${top name 1}${top pid 1} ${top cpu 1} ${top mem 1}
 ${goto 30}${color lightgrey}- ${top name 2}${top pid 2} ${top cpu 2} ${top mem 2}
 ${goto 30}${color lightgrey}- ${top name 3}${top pid 3} ${top cpu 3} ${top mem 3}
 ${goto 30}${voffset +6}${color6}Load average:${color}${goto 180}${loadavg}
-${goto 30}${color6}Cumulative CPU:${color}${goto 180}${freq_g} GHz
 # |--MEM
 ${voffset -5}
 ${font Liberation Sans:style=Bold:size=13}${color white}MEMORY ${color}${color6}${hr 2}${color}
-${voffset -15}
+${voffset -20}
 ${goto 30}${color6}${font Poky:size=17}M${font}${color}${voffset -7}${font}${goto 65}${color5}RAM: ${goto 70}${font Liberation Sans:style=Bold:size=16}${color0}$memperc% ${font}${color5}Used${color}
 ${goto 65}${color9}${membar 4, 250 FFFFFF ECF2F7}${color}
 ${goto 65}${mem} / ${memmax}
@@ -102,7 +104,7 @@ ${goto 65}${color lightgrey}- ${top_mem name 3} ${top_mem mem 3} %
 # |--Hard Drive
 ${voffset -5}
 ${font Liberation Sans:style=Bold:size=13}${color white}STORAGE ${color}${color6}${hr 2}${color}
-${voffset -10}
+${voffset -15}
 #  slash
 ${goto 30}${color0}${font Poky:size=17}y${font}${color}${voffset -8}${font}${goto 65}${color5}/${color}: ${font Liberation Sans:style=Bold:size=16}${color white}${goto 50}${fs_used_perc /}% ${font}${color5}Used${color}
 ${goto 65}${color6}${fs_bar 6, 250 /}${font}${color}
