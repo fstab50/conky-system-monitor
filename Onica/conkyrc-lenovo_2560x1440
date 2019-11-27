@@ -54,30 +54,30 @@ ${voffset -25}
 ${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color5}CPU2: ${goto 70}${font Liberation Sans:style=Bold:size=16}${color0}${cpu cpu2}%${color}${font} ${alignr}
 ${goto 65}${color9}${cpugraph cpu2 40,250 1DD431 277886}${color}
 # cpu3
-${voffset -25}
+${voffset -30}
 ${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color5}CPU3: ${goto 70}${font Liberation Sans:style=Bold:size=16}${color0}${cpu cpu3}%${color}${font} ${alignr}${color0}
 ${goto 65}${color9}${cpugraph cpu3 40,250 1DD431 277886 }${color}
 # cpu4
-${voffset -25}
+${voffset -30}
 ${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color5}CPU4: ${goto 70}${font Liberation Sans:style=Bold:size=16}${color0}${cpu cpu4}%${color}${font} ${alignr}${color0}
 ${goto 65}${color9}${cpugraph cpu4 40,250 1DD431 277886 }${color}
 # cpu5
-${voffset -25}
+${voffset -30}
 ${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color5}CPU5: ${goto 70}${font Liberation Sans:style=Bold:size=16}${color0}${cpu cpu5}%${color}${font} ${alignr}${color0}
 ${goto 65}${color9}${cpugraph cpu5 40,250 1DD431 277886 }${color}
 # cpu6
-${voffset -25}
+${voffset -30}
 ${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color5}CPU6: ${goto 70}${font Liberation Sans:style=Bold:size=16}${color0}${cpu cpu6}%${color}${font} ${alignr}${color0}
 ${goto 65}${color9}${cpugraph CPU6 40,250 1DD431 277886}${color}
 # cpu7
-${voffset -25}
+${voffset -30}
 ${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color5}CPU7: ${goto 70}${font Liberation Sans:style=Bold:size=16}${color0}${cpu cpu7}%${color}${font} ${alignr}${color0}
 ${goto 65}${color9}${cpugraph CPU7 40,250 1DD431 277886}${color}
 # cpu8
-${voffset -25}
+${voffset -30}
 ${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -5}${color5}CPU8: ${goto 70}${font Liberation Sans:style=Bold:size=16}${color0}${cpu cpu8}%${color}${font} ${alignr}${color0}
 ${goto 65}${color9}${cpugraph CPU8 40,250 1DD431 277886}${color}
-${voffset -15}
+${voffset -30}
 ${goto 30}${color4}${font FontAwesome:size=17}${font}${goto 65}${color lightgrey}CPU Temp IN:${color}${goto 260}${execi 2 sensors -f | grep CPUTIN | awk '{print $2}' | rev | cut -c 2-20 | rev}${color white}F${color}
 ${voffset -10}
 ${goto 30}${color6}Process Name${goto 180}PID     CPU%   MEM%
@@ -87,16 +87,13 @@ ${goto 30}${color lightgrey}- ${top name 3}${top pid 3} ${top cpu 3} ${top mem 3
 ${goto 30}${voffset +6}${color6}Load average:${color}${goto 180}${loadavg}
 ${goto 30}${color6}Cumulative CPU:${color}${goto 180}${freq_g} GHz
 # |--MEM
-${voffset +5}
+${voffset -10}
 ${font Liberation Sans:style=Bold:size=13}${color white}MEMORY ${color}${color6}${hr 2}${color}
 ${voffset -15}
 ${goto 30}${color6}${font Poky:size=17}M${font}${color}${voffset -7}${font}${goto 65}${color5}RAM: ${goto 70}${font Liberation Sans:style=Bold:size=16}${color0}$memperc% ${font}${color5}Used${color}
 ${goto 65}${color9}${membar 4, 250 FFFFFF ECF2F7}${color}
 ${goto 65}${mem} / ${memmax}
-${voffset +5}${goto 30}${color6}${font Poky:size=17}M${font}${color}${voffset -5}${font}${goto 65}${color5}SWAP: ${goto 70}${font Liberation Sans:style=Bold:size=16}${color0}${swapperc}% ${font}${color5}Used${color}
-${goto 65}${color9}${swapbar 4, 250 FFFFFF ECF2F7}${color}
-${goto 65}${swap} / ${swapmax}
-${voffset -10}
+${voffset -15}
 ${goto 50}${font}${color6}Highest MEM:${color}
 ${goto 65}${color lightgrey}- ${top_mem name 1} ${top_mem mem 1} %
 ${goto 65}${color lightgrey}- ${top_mem name 2} ${top_mem mem 2} %
@@ -125,9 +122,9 @@ ${goto 30}${color0}${font Poky:size=16}${font}${voffset -40}${color0}Down ${down
 ${goto 30}${color6}${downspeedgraph wlan0 40,140 FFFFFF ECF2F7}${color6} ${alignr}${upspeedgraph wlan0 40,140 ECF2F7 FFFFFF }${color}
 ${goto 30}${font}${color0}Total ${totaldown wlan0} ${alignr}Total ${totalup wlan0}
 ${endif}
-${if_existing /sys/class/net/enp5s0/operstate up}
-${goto 30}${color0}${font Poky:size=16}${font}${voffset -40}${color0}Down ${downspeed enp5s0}/s ${alignr}Up ${upspeed enp5s0}/s
-${goto 30}${color6}${downspeedgraph enp5s0 40,140 FFFFFF ECF2F7}${color6} ${alignr}${upspeedgraph enp5s0 40,140 ECF2F7 FFFFFF }${color}
-${goto 30}${font}${color0}Total ${totaldown enp5s0} ${alignr}Total ${totalup enp5s0}
+${if_existing /sys/class/net/enx9cebe82f4396/operstate up}
+${goto 30}${color0}${font Poky:size=16}${font}${voffset -40}${color0}Down ${downspeed enp5s0}/s ${alignr}Up ${upspeed enx9cebe82f4396}/s
+${goto 30}${color6}${downspeedgraph enx9cebe82f4396 40,140 FFFFFF ECF2F7}${color6} ${alignr}${upspeedgraph enx9cebe82f4396 40,140 ECF2F7 FFFFFF }${color}
+${goto 30}${font}${color0}Total ${totaldown enx9cebe82f4396} ${alignr}Total ${totalup enx9cebe82f4396}
 ${endif}
 ]]
