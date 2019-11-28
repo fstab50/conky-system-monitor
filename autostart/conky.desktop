@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec='/home/blake/git/conky-system-monitor/init/conky-init.sh'
+Exec="$HOME/git/conky-system-monitor/init/conky-init.sh"
 Hidden=false
 NoDisplay=false
 X-GNOME-Autostart-enabled=true
