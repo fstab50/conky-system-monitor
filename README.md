@@ -72,7 +72,7 @@
 ### Conky Setup -- Ubuntu18.04 Desktop (ubuntu1-desktop, 2018 - 2020)
 * * *
 
-* Full Screen, `2560 x 1440` resolution.  [Zoom-in]("http://images.awspros.world/conky-configurations/ubuntu1-desktop2.png").
+* Full Screen, `2560 x 1440` resolution.  [Zoom-in](http://images.awspros.world/conky-configurations/ubuntu1-desktop2.png).
 
 <p align="center">
     <a href="http://images.awspros.world/conky-configurations/ubuntu1-desktop1.png" target="_blank"><img src="./assets/ubuntu1-desktop1_sm.png">
