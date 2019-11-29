@@ -79,11 +79,6 @@
 </p>
 
 
-<p align="center">
-    <a href="http://images.awspros.world/conky-configurations/ubuntu1-desktop2.png" target="_blank"><img src="./assets/ubuntu1-desktop2_sm.png">
-</p>
-
-
 * * *
 ### Conky Setup -- Libra XPS13 Developer Edition Laptop (2019 - 2020)
 * * *
