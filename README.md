@@ -67,6 +67,24 @@
 
 [![](./assets/libra3.png)](https://bitbucket.org/blakeca00/library-utilities/src/master/conky/assets/libra3.png)
 
+
+* * *
+### Conky Setup -- Ubuntu18.04 Desktop (ubuntu1-desktop, 2018 - 2020)
+* * *
+
+* Full Screen, `2560 x 1440` resolution
+
+<p align="center">
+    <a href="http://images.awspros.world/conky-configurations/ubuntu1-desktop1.png" target="_blank"><img src="./assets/ubuntu1-desktop1_sm.png">
+</p>
+
+* Right-hand side close up
+
+<p align="center">
+    <a href="http://images.awspros.world/conky-configurations/ubuntu1-desktop2.png" target="_blank"><img src="./assets/ubuntu1-desktop2_sm.png">
+</p>
+
+
 * * *
 ### Conky Setup -- Libra XPS13 Developer Edition Laptop (2019 - 2020)
 * * *
@@ -78,10 +96,3 @@
 * * *
 
 ## conky file contents
-* * *
-
-* **start_conky_zion.sh**: startup script, initated by gnome startup or rc.local
-* **getResolution.py**: python script invoked to find out resolution (changes if
-external monitor or native laptop screen)
-* **conkyrc_zion-laptop_1366x768**: conky config for 1366 x 768 monitor resolution
-* **conkyrc_zion-laptop_1920x1080**: conky config for 1920 x 1080 monitor resolution
