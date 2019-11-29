@@ -1,3 +1,7 @@
+[Unit]
+Description=Conky
+After=network-online.target
+
 [Desktop Entry]
 Type=Application
 Exec="$HOME/git/conky-system-monitor/init/conky-init.sh"
@@ -8,3 +12,11 @@ Name[en_IN]=Conky
 Name=Conky
 Comment[en_IN]=
 Comment=
+
+[Service]
+Type=simple
+User=%i
+ExecStart=/bin/bash -c "$HOME/git/conky-system-monitor/init/conky-init.sh"
+
+[Install]
+WantedBy=multi-user.target
