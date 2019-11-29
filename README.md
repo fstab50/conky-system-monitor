@@ -1,3 +1,4 @@
+<a name="top"></a>
 * * *
 # README - conky
 * * *
@@ -10,6 +11,10 @@
 
 ![](./assets/scorpio_FC15_2012-2014.jpg)
 
+--
+
+[back to the top](#top)
+
 * * *
 ### Gemini - Fedora Core 20 (2013-2016)
 * * *
@@ -20,6 +25,10 @@
 ![](./assets/gemini2_FC20_2013-2016.png)
 
 
+--
+
+[back to the top](#top)
+
 * * *
 ### Zion Laptop - Linux Mint 17.3 (2016-2017)
 * * *
@@ -27,11 +36,20 @@
 ![](./assets/conky_1920x1080_screenshot.png)
 
 
+--
+
+[back to the top](#top)
+
 * * *
 ### Ubuntu1 - Ubuntu 16.10 (2H2017-2018)
 * * *
 
 ![](./assets/ubuntu1_2H2017.png)
+
+
+--
+
+[back to the top](#top)
 
 * * *
 ### Conky Setup -- ubuntu1 (2017-2018)
@@ -45,17 +63,32 @@
 
 [![](./assets/motd-ubuntu1.png)](https://bitbucket.org/blakeca00/library-utilities/src/master/conky/assets/motd-ubuntu1.png)
 
+
+--
+
+[back to the top](#top)
+
 * * *
 ### Scorpio - LMDE (2018)
 * * *
 
 [![](./assets/scorpio-desktop-2018.png)](https://bitbucket.org/blakeca00/library-utilities/src/master/conky/assets/scorpio-desktop-2018.png)
 
+
+--
+
+[back to the top](#top)
+
 * * *
 ### Conky Setup -- scorpio (2018)
 * * *
 
 [![](./assets/scorpio-detail.png)](https://bitbucket.org/blakeca00/library-utilities/src/master/conky/assets/scorpio-detail.png)
+
+
+--
+
+[back to the top](#top)
 
 * * *
 ### Conky Setup -- Libra XPS13 Developer Edition Laptop (2016 - 2019)
@@ -68,6 +101,10 @@
 [![](./assets/libra3.png)](https://bitbucket.org/blakeca00/library-utilities/src/master/conky/assets/libra3.png)
 
 
+--
+
+[back to the top](#top)
+
 * * *
 ### Conky Setup -- Ubuntu18.04 Desktop (ubuntu1-desktop, 2018 - 2020)
 * * *
@@ -79,6 +116,10 @@
 </p>
 
 
+--
+
+[back to the top](#top)
+
 * * *
 ### Conky Setup -- Libra XPS13 Developer Edition Laptop (2019 - 2020)
 * * *
@@ -87,6 +128,37 @@
     <a href="http://images.awspros.world/conky-configurations/2019-10_libra_conky.png" target="_blank"><img src="./assets/2019-10_libra_conky_small.png">
 </p>
 
+
+--
+
+[back to the top](#top)
+
 * * *
 
-## conky file contents
+## Author & Copyright
+
+All works contained herein copyrighted via below author unless work is explicitly noted by an alternate author.
+
+* Copyright Blake Huber, All Rights Reserved.
+
+[back to the top](#top)
+
+* * *
+
+## License
+
+* Software contained in this repo is licensed under the [MIT license agreement](./LICENSE).
+
+[back to the top](#top)
+
+* * *
+
+## Disclaimer
+
+*Code is provided "as is". No liability is assumed by either the code's originating author nor this repo's owner for their use at AWS or any other facility. Furthermore, running function code at AWS may incur monetary charges; in some cases, charges may be substantial. Charges are the sole responsibility of the account holder executing code obtained from this library.*
+
+Additional terms may be found in the complete [license agreement](./LICENSE).
+
+[back to the top](#top)
+
+* * *
