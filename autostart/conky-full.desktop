@@ -1,0 +1,22 @@
+[Unit]
+Description=Conky
+After=network-online.target
+
+[Desktop Entry]
+Type=Application
+Exec="/home/bhuber/git/conky-system-monitor/init/conky-init.sh"
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_IN]=Conky
+Name=Conky
+Comment[en_IN]=
+Comment=
+
+[Service]
+Type=simple
+User=%i
+ExecStart="/home/bhuber/git/conky-system-monitor/init/conky-init.sh"
+
+[Install]
+WantedBy=multi-user.target
