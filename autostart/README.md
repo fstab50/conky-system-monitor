@@ -15,3 +15,6 @@ All conky automatic startup on book configurations (*.desktop files) should be l
 directory on all modern Linux systems with systemd
 
 * * *
+## Notes
+
+* `conky-full.desktop`:  this version has all the official sections contained within; however, it does not work (does not initiate executable statement) for unknown reasons.
