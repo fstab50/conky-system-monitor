@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec="/home/bhuber/git/conky-system-monitor/init/conky-init.sh"
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_IN]=Conky
+Name=Conky
+Comment[en_IN]=Monitoring system hardware statistics
+Comment=Monitoring system
