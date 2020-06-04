@@ -22,6 +22,11 @@ function host_keyword(){
 
     case $host in
 
+        *aries*)
+            echo 'aries'
+            return 0
+            ;;
+
         *libra*)
             echo 'libra'
             return 0
