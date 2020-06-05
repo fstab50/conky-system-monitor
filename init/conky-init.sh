@@ -6,7 +6,7 @@
 pkg=$(basename $0)
 logger=$(which logger)
 _home=$(echo $HOME)
-PYTHON2_PATH=$(which python)
+PYTHON3_PATH=$(which python3)
 DELAY=12     # seconds
 
 # --- declarations ------------------------------------------------------------
@@ -82,7 +82,7 @@ fi
 sleep $DELAY
 
 # find out what monitor is connected
-RES_INFO=$($PYTHON2_PATH $ROOT_DIR/getResolution.py | grep "current" |  awk '{print $1}')
+RES_INFO=$($PYTHON3_PATH $ROOT_DIR/getResolution.py | grep "current" |  awk '{print $1}')
 
 case $RES_INFO in
     1366)
@@ -95,7 +95,7 @@ case $RES_INFO in
         conky --config="${ROOT_DIR}/$(hostname)/conkyrc-${KEYWORD}_1920x1080" 2>/dev/null &
 	    ;;
 
-    2560 | 5120)
+    2560 | 512?)
         logger "[INFO]: 2560x1440 resolution identified, init appropriate conkyrc"
         conky --config="${ROOT_DIR}/$(hostname)/conkyrc-${KEYWORD}_2560x1440" 2>/dev/null &
   	    ;;
