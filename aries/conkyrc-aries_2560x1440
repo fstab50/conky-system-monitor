@@ -120,28 +120,28 @@ ${goto 65}${color lightgrey}- ${top_mem name 1} ${top_mem mem 1} %
 ${goto 65}${color lightgrey}- ${top_mem name 2} ${top_mem mem 2} %
 ${goto 65}${color lightgrey}- ${top_mem name 3} ${top_mem mem 3} %
 # |--Hard Drive
-${voffset -5}
+${voffset -10}
 ${font Liberation Sans:siz=17,weight:bold}${color white}STORAGE ${color}${color6}${hr 2}${color}
 ${voffset -10}
 #  slash
-${goto 30}${color0}${font Poky:size=17}y${font}${color}${voffset -8}${font}${goto 65}${color5}/${color}: ${font Liberation Sans:style=Bold:size=17}${color white}${fs_used_perc /}% ${font}${color5}Used${color}
+${goto 30}${color0}${font Poky:size=17}y${font}${color}${voffset -11}${font}${goto 65}${color5}/${color}: ${font Liberation Sans:style=Bold:size=17}${color white}${fs_used_perc /}% ${font}${color5}Used${color}
 ${goto 65}${color6}${fs_bar 6, 250 /}${font}${color}
 ${goto 65}${color0}${fs_used /}${color} / ${fs_size /}
 # /boot
-${goto 30}${voffset +10}${color0}${font Poky:size=17}y${font}${color}${voffset -8}${font}${goto 65}${color5}/boot${color} (${color5}${fs_type /boot}${color}): ${font Liberation Sans:style=Bold:size=17}${color white}${fs_used_perc /boot}% ${font}${color5}Used${color}
+${goto 30}${voffset +10}${color0}${font Poky:size=17}y${font}${color}${voffset -11}${font}${goto 65}${color5}/boot${color} (${color5}${fs_type /boot}${color}): ${font Liberation Sans:style=Bold:size=17}${color white}${fs_used_perc /boot}% ${font}${color5}Used${color}
 ${goto 65}${color6}${fs_bar 6, 250 /boot}${font}${color}
 ${goto 65}${color0}${fs_used /boot}${color} /${fs_size /boot}
 
 #|--NETWORKING
-${voffset 0}${font Liberation Sans:siz=17,weight:bold}${color white}NETWORK ${color}${color6}${hr 2}${color}
+${voffset -10}${font Liberation Sans:siz=17,weight:bold}${color white}NETWORK ${color}${color6}${hr 2}${color}
 ${if_existing /sys/class/net/wlan0/operstate up}
-${goto 30}${color0}${font Poky:size=17}${font}${voffset -40}${color0}Down ${downspeed wlan0}/s ${alignr}Up ${upspeed wlan0}/s
+${goto 30}${color0}${font Poky:size=17}${font}${voffset -45}${color0}Down ${downspeed wlan0}/s ${alignr}Up ${upspeed wlan0}/s
 ${goto 30}${color6}${downspeedgraph wlan0 40,140 FFFFFF ECF2F7}${color6} ${alignr}${upspeedgraph wlan0 40,140 ECF2F7 FFFFFF }${color}
-${goto 30}${font}${color0}Total ${totaldown wlan0} ${alignr}Total ${totalup wlan0}
+${goto 30}${voffset -5}${font}${color0}Total ${totaldown wlan0} ${alignr}Total ${totalup wlan0}
 ${endif}
 ${if_existing /sys/class/net/enp3s0/operstate up}
-${goto 30}${color0}${font Poky:size=17}${font}${voffset -40}${color0}Down ${downspeed enp3s0}/s ${alignr}Up ${upspeed enp3s0}/s
+${goto 30}${color0}${font Poky:size=17}${font}${voffset -45}${color0}Down ${downspeed enp3s0}/s ${alignr}Up ${upspeed enp3s0}/s
 ${goto 30}${color6}${downspeedgraph enp3s0 40,140 FFFFFF ECF2F7}${color6} ${alignr}${upspeedgraph enp3s0 40,140 ECF2F7 FFFFFF }${color}
-${goto 30}${font}${color0}Total ${totaldown enp3s0} ${alignr}Total ${totalup enp3s0}
+${goto 30}${voffset -5}${font}${color0}Total ${totaldown enp3s0} ${alignr}Total ${totalup enp3s0}
 ${endif}
 ]]
