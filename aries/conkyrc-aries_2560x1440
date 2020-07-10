@@ -139,9 +139,9 @@ ${goto 30}${color0}${font Poky:size=17}${font}${voffset -45}${color0}Down ${down
 ${goto 30}${color6}${downspeedgraph wlan0 40,140 FFFFFF ECF2F7}${color6} ${alignr}${upspeedgraph wlan0 40,140 ECF2F7 FFFFFF }${color}
 ${goto 30}${voffset -5}${font}${color0}Total ${totaldown wlan0} ${alignr}Total ${totalup wlan0}
 ${endif}
-${if_existing /sys/class/net/enp3s0/operstate up}
-${goto 30}${color0}${font Poky:size=17}${font}${voffset -45}${color0}Down ${downspeed enp3s0}/s ${alignr}Up ${upspeed enp3s0}/s
-${goto 30}${color6}${downspeedgraph enp3s0 40,140 FFFFFF ECF2F7}${color6} ${alignr}${upspeedgraph enp3s0 40,140 ECF2F7 FFFFFF }${color}
-${goto 30}${voffset -5}${font}${color0}Total ${totaldown enp3s0} ${alignr}Total ${totalup enp3s0}
+${if_existing /sys/class/net/eno2/operstate up}
+${goto 30}${color0}${font Poky:size=17}${font}${voffset -45}${color0}Down ${downspeed eno2}/s ${alignr}Up ${upspeed eno2}/s
+${goto 30}${color6}${downspeedgraph eno2 40,140 FFFFFF ECF2F7}${color6} ${alignr}${upspeedgraph eno2 40,140 ECF2F7 FFFFFF }${color}
+${goto 30}${voffset -5}${font}${color0}Total ${totaldown eno2} ${alignr}Total ${totalup eno2}
 ${endif}
 ]]
