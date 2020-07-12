@@ -99,8 +99,7 @@ ${voffset -25}
 ${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -10}${color5}CPU13: ${font Liberation Sans:style=Bold:size=17}${color white}${cpu cpu13}%${color}${font} ${alignr}${color0}
 ${goto 65}${voffset -5}${color9}${cpugraph CPU13 20,250 1DD431 277886 }${color}
 ${voffset -15}
-${goto 30}${color4}${font FontAwesome:size=17}${font}${goto 65}${color lightgrey}CPU Temperature:${color}${goto 260}${execi 2 sensors -f | grep 'Core 0' | awk -F ' ' '{print $3}'
-}${color white}°F${color}
+${goto 30}${color4}${font FontAwesome:size=17}${font}${goto 65}${color lightgrey}CPU Temperature:${color}${goto 260}${execi 2 sensors -f | grep 'Core 0' | awk -F ' ' '{print $3}'}
 ${voffset -10}
 ${goto 30}${color6}Process Name${goto 180}PID     CPU%   MEM%
 ${goto 30}${color lightgrey}- ${top name 1}${top pid 1} ${top cpu 1} ${top mem 1}
