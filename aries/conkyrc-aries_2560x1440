@@ -49,15 +49,15 @@ ${font Liberation Sans:siz=17,weight:bold}${color white}CPU ${color}${color6}${h
 # cpu1
 ${voffset -20}
 ${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -10}${color5}CPU1: ${font Liberation Sans:style=Bold:size=17}${color white}${cpu cpu1}%${color}${font} ${alignr}${color0}
-${goto 65}${voffset -5}${color9}${cpugraph cpu1 20,250 2062A4 2062A4}${color}
+${goto 65}${voffset -5}${color9}${cpugraph cpu1 20,250 1DD431 277886 }${color}
 # cpu2
 ${voffset -25}
 ${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -10}${color5}CPU2: ${font Liberation Sans:style=Bold:size=17}${color white}${cpu cpu2}%${color}${font} ${alignr}${color0}
-${goto 65}${voffset -5}${color9}${cpugraph cpu2 20,250 1DD431 1DD431 }${color}
+${goto 65}${voffset -5}${color9}${cpugraph cpu2 20,250 1DD431 277886 }${color}
 # cpu3
 ${voffset -25}
 ${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -10}${color5}CPU3: ${font Liberation Sans:style=Bold:size=17}${color white}${cpu cpu3}%${color}${font} ${alignr}${color0}
-${goto 65}${voffset -5}${color9}${cpugraph cpu3 20,250 00FF1C 00FF1C }${color}
+${goto 65}${voffset -5}${color9}${cpugraph cpu3 20,250 1DD431 00FF1C }${color}
 # cpu4
 ${voffset -25}
 ${goto 30}${color4}${font Poky:size=17}P${font}${color}${goto 65}${font}${voffset -10}${color5}CPU4: ${font Liberation Sans:style=Bold:size=17}${color white}${cpu cpu4}%${color}${font} ${alignr}${color0}
