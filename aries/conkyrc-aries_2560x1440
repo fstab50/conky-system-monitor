@@ -143,6 +143,14 @@ ${goto 65}${color0}${fs_used /}${color} / ${fs_size /}
 ${goto 30}${voffset +10}${color0}${font Poky:size=17}y${font}${color}${voffset -11}${font}${goto 65}${color5}/boot${color} (${color5}${fs_type /boot}${color}): ${font Liberation Sans:style=Bold:size=17}${color white}${fs_used_perc /boot}% ${font}${color5}Used${color}
 ${goto 65}${color6}${fs_bar 6, 250 /boot}${font}${color}
 ${goto 65}${color0}${fs_used /boot}${color} /${fs_size /boot}
+# /mnt/vm
+${goto 30}${voffset +10}${color0}${font Poky:size=17}y${font}${color}${voffset -11}${font}${goto 65}${color5}/mnt/vm${color} (${color5}${fs_type /mnt/vm}${color}): ${font Liberation Sans:style=Bold:size=17}${color white}${fs_used_perc /mnt/vm}% ${font}${color5}Used${color}
+${goto 65}${color6}${fs_bar 6, 250 /mnt/vm}${font}${color}
+${goto 65}${color0}${fs_used /mnt/vm}${color} /${fs_size /mnt/vm}
+# /mnt/Videos
+${goto 30}${voffset +10}${color0}${font Poky:size=17}y${font}${color}${voffset -11}${font}${goto 65}${color5}/mnt/Videos${color} (${color5}${fs_type /mnt/Videos}${color}): ${font Liberation Sans:style=Bold:size=17}${color white}${fs_used_perc /mnt/Videos}% ${font}${color5}Used${color}
+${goto 65}${color6}${fs_bar 6, 250 /mnt/Videos}${font}${color}
+${goto 65}${color0}${fs_used /mnt/Videos}${color} /${fs_size /mnt/Videos}
 
 #|--NETWORKING
 ${voffset -10}${font Liberation Sans:siz=17,weight:bold}${color white}NETWORK ${color}${color6}${hr 2}${color}
