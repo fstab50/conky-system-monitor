@@ -134,6 +134,23 @@
 [back to the top](#top)
 
 * * *
+### Conky Setup -- Aries System 76 Thelio Desktop running Ubuntu 20.04 LTS (2020 - Current)
+* * *
+
+<p align="center">
+    <a href="http://images.awspros.world/conky-configurations/2020-07_ConkySetup_Aries_1.png" target="_blank"><img src="./assets_index/2020-07_ConkySetup_Aries_1_40pct.png">
+</p>
+
+<p align="center">
+    <a href="http://images.awspros.world/conky-configurations/2020-07_ConkySetup_Aries_2.png" target="_blank"><img src="./assets_index/2020-07_ConkySetup_Aries_2_40pct.png">
+</p>
+
+
+--
+
+[back to the top](#top)
+
+* * *
 
 ## Author & Copyright
 
