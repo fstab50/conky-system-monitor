@@ -141,7 +141,7 @@
     <a href="http://images.awspros.world/conky-configurations/2020-07_ConkySetup_Aries_1.png" target="_blank"><img src="./assets_index/2020-07_ConkySetup_Aries_1_40pct.png">
 </p>
 
-<p align="center">
+<p align="right">
     <a href="http://images.awspros.world/conky-configurations/2020-07_ConkySetup_Aries_2.png" target="_blank"><img src="./assets_index/2020-07_ConkySetup_Aries_2_40pct.png">
 </p>
 
