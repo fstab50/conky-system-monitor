@@ -66,7 +66,7 @@ logger "[INFO]: KEYWORD = $KEYWORD"
 logger "[INFO]: ROOT_DIR = $ROOT_DIR"
 
 # estimate conky running status
-run_status=$(ps -ef | grep $pkg | grep -v grep 2>/dev/null)
+run_status=$(ps | grep $pkg | grep -v grep 2>/dev/null)
 echo -e logger "[INFO]: run status detect is: $run_status"
 
 if [[ $run_status ]]; then
