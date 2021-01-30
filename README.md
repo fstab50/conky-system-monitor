@@ -134,7 +134,7 @@
 [back to the top](#top)
 
 * * *
-### Conky Setup -- Aries System 76 Thelio Desktop running Ubuntu 20.04 LTS (2020 - Current)
+### Aries System 76 Thelio Desktop running Ubuntu 20.04 LTS (2020 - Current)
 * * *
 
 <p align="center">
@@ -151,11 +151,11 @@
 [back to the top](#top)
 
 * * *
-### Conky Setup -- Dell XPS 13 Developer Edition running Ubuntu 20.10 LTS (2021 - Current)
+### Dell XPS 13 Developer Edition running Ubuntu 20.10 LTS (2021 - Current)
 * * *
 
 <p align="center">
-    <a href="http://images.awspros.world/conky-configurations/2021_libra-9310_Laptop.png" target="_blank"><img src="./asset/2021_libra-9310_Laptop.png">
+    <a href="http://images.awspros.world/conky-configurations/2021_libra-9310_Laptop.png" target="_blank"><img src="./assets/2021_libra-9310_Laptop.png">
 </p>
 
 
