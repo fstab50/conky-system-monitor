@@ -158,10 +158,6 @@
     <a href="http://images.awspros.world/conky-configurations/2021_libra-9310_Laptop.png" target="_blank"><img src="./asset/2021_libra-9310_Laptop.png">
 </p>
 
-<p align="right">
-    <a href="http://images.awspros.world/conky-configurations/2020-07_ConkySetup_Aries_2.png" target="_blank"><img src="./assets/2020-07_ConkySetup_Aries_2_40pct.png">
-</p>
-
 
 --
 
