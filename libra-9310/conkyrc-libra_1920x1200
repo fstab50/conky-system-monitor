@@ -95,7 +95,6 @@ ${voffset -10}
 #${goto 30}${color lightgrey}- ${top name 3}${top pid 3} ${top cpu 3} ${top mem 3}
 #${goto 30}${color lightgrey}- ${top name 4}${top pid 4} ${top cpu 4} ${top mem 4}
 ${goto 30}${voffset +6}${color6}Load average:${color}${goto 180}${loadavg}
-${goto 30}${color6}Cumulative CPU:${color}${goto 180}${freq_g} GHz
 # |--MEM
 ${voffset -5}
 ${font Liberation Sans:siz=17,weight:bold}${color white}MEMORY ${color}${color6}${hr 2}${color}
@@ -103,15 +102,10 @@ ${voffset -15}
 ${goto 30}${color6}${font Poky:size=17}M${font}${color}${voffset -7}${font}${goto 65}${color5}RAM: ${font Liberation Sans:style=Bold:size=17}${color white}$memperc% ${font}${color5}Used${color}
 ${goto 65}${color6}${membar 4, 250 FFFFFF ECF2F7}${color}
 ${goto 65}${mem} / ${memmax}
-${voffset -15}
-${goto 30}${color6}${font Poky:size=17}M${font}${color}${voffset -7}${font}${goto 65}${color5}SWAP: ${font Liberation Sans:style=Bold:size=17}${color white}${swapperc}% ${font}${color5}Used${color}
-${goto 65}${color6}${swapbar 4, 250 FFFFFF ECF2F7}${color}
-${goto 65}${swap} / ${swapmax}
 
 ${goto 50}${font}${color6}Highest MEM:${color}
 ${goto 65}${color lightgrey}- ${top_mem name 1} ${top_mem mem 1} %
 ${goto 65}${color lightgrey}- ${top_mem name 2} ${top_mem mem 2} %
-${goto 65}${color lightgrey}- ${top_mem name 3} ${top_mem mem 3} %
 ${voffset -15}
 # |--Hard Drive
 ${voffset -5}
@@ -121,14 +115,6 @@ ${voffset -15}
 ${goto 30}${color0}${font Poky:size=17}y${font}${color}${voffset -8}${font}${goto 65}${color5}/${color}: ${font Liberation Sans:style=Bold:size=17}${color white}${fs_used_perc /}% ${font}${color5}Used${color}
 ${goto 65}${color6}${fs_bar 6, 250 /}${font}${color}
 ${goto 65}${color0}${fs_used /}${color} / ${fs_size /}
-# /boot
-${goto 30}${voffset +10}${color0}${font Poky:size=17}y${font}${color}${voffset -8}${font}${goto 65}${color5}/boot${color} (${color5}${fs_type /boot}${color}): ${font Liberation Sans:style=Bold:size=17}${color white}${fs_used_perc /boot}% ${font}${color5}Used${color}
-${goto 65}${color6}${fs_bar 6, 250 /boot}${font}${color}
-${goto 65}${color0}${fs_used /boot}${color} /${fs_size /boot}
-#  home
-${goto 30}${voffset +10}${color0}${font Poky:size=17}y${font}${color}${voffset -8}${font}${goto 65}${color5}/home${color} (${color5}${fs_type /home}${color}): ${font Liberation Sans:style=Bold:size=17}${color white}${fs_used_perc /home}% ${font}${color5}Used${color}
-${goto 65}${color6}${fs_bar 6, 250 /home}${font}${color}
-${goto 65}${color0}${fs_used /home}${color} /${fs_size /home}
 
 #|--NETWORKING
 ${voffset -5}${font Liberation Sans:siz=17,weight:bold}${color white}NETWORK ${color}${color6}${hr 2}${color}
