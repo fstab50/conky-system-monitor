@@ -92,7 +92,7 @@ case $RES_INFO in
 
     1920)
         logger "[INFO]: 1920x1080 resolution identified, init appropriate conkyrc"
-        conky --config="${ROOT_DIR}/$(hostname)/conkyrc-${KEYWORD}_1920x1080" 2>/dev/null &
+        conky --config="${ROOT_DIR}/$(hostname)/conkyrc-${KEYWORD}_1920x1200" 2>/dev/null &
 	    ;;
 
     2560 | 512?)
