@@ -94,11 +94,11 @@
 ### Conky Setup -- Libra XPS13 Developer Edition Laptop (2016 - 2019)
 * * *
 
-[![](./assets/libra1.png)](https://bitbucket.org/blakeca00/library-utilities/src/master/conky/assets/libra1.png)
+[![](./assets/libra1.png)](http://images.awspros.world/conky-configurations/libra1.png)
 
-[![](./assets/libra2.png)](https://bitbucket.org/blakeca00/library-utilities/src/master/conky/assets/libra2.png)
+[![](./assets/libra2.png)](http://images.awspros.world/conky-configurations/libra2.png)
 
-[![](./assets/libra3.png)](https://bitbucket.org/blakeca00/library-utilities/src/master/conky/assets/libra3.png)
+[![](./assets/libra3.png)](http://images.awspros.world/conky-configurations/libra3.png)
 
 
 --
