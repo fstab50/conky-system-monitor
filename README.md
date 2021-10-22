@@ -9,7 +9,7 @@
 ### Scorpio - Fedora Core 15 (2012-2014)
 * * *
 
-![](./assets/scorpio_FC15_2012-2014.jpg)
+[![](./assets/scorpio_FC15_2012-2014.jpg)](http://images.awspros.world/conky-configurations/scorpio_FC15_2012-2014.jpg)
 
 --
 
@@ -19,10 +19,10 @@
 ### Gemini - Fedora Core 20 (2013-2016)
 * * *
 
-![](./assets/gemini1_FC20_2013-2016.png)
+[![](./assets/gemini1_FC20_2013-2016.png)](http://images.awspros.world/conky-configurations/gemini1_FC20_2013-2016.png)
 
 
-![](./assets/gemini2_FC20_2013-2016.png)
+[![](./assets/gemini2_FC20_2013-2016.png)](http://images.awspros.world/conky-configurations/gemini2_FC20_2013-2016.png)
 
 
 --
@@ -33,7 +33,7 @@
 ### Zion Laptop - Linux Mint 17.3 (2016-2017)
 * * *
 
-![](./assets/conky_1920x1080_screenshot.png)
+[![](./assets/conky_1920x1080_screenshot.png)](http://images.awspros.world/conky-configurations/conky_1920x1080_screenshot.png)
 
 
 --
@@ -44,7 +44,7 @@
 ### Ubuntu1 - Ubuntu 16.10 (2H2017-2018)
 * * *
 
-![](./assets/ubuntu1_2H2017.png)
+[![](./assets/ubuntu1_2H2017.png)](http://images.awspros.world/conky-configurations/ubuntu1_2H2017.png)
 
 
 --
@@ -57,11 +57,11 @@
 
 #### Desktop
 
-[![](./assets/ubuntu1.png)](https://bitbucket.org/blakeca00/library-utilities/src/master/conky/assets/ubuntu1.png)
+[![](./assets/ubuntu1.png)](http://images.awspros.world/conky-configurations/ubuntu1.png)
 
 #### motd
 
-[![](./assets/motd-ubuntu1.png)](https://bitbucket.org/blakeca00/library-utilities/src/master/conky/assets/motd-ubuntu1.png)
+[![](./assets/motd-ubuntu1.png)](http://images.awspros.world/conky-configurations/motd-ubuntu1.png)
 
 
 --
@@ -72,7 +72,7 @@
 ### Scorpio - LMDE (2018)
 * * *
 
-[![](./assets/scorpio-desktop-2018.png)](https://bitbucket.org/blakeca00/library-utilities/src/master/conky/assets/scorpio-desktop-2018.png)
+[![](./assets/scorpio-desktop-2018.png)](http://images.awspros.world/conky-configurations/scorpio-desktop-2018.png)
 
 
 --
@@ -83,7 +83,7 @@
 ### Conky Setup -- scorpio (2018)
 * * *
 
-[![](./assets/scorpio-detail.png)](https://bitbucket.org/blakeca00/library-utilities/src/master/conky/assets/scorpio-detail.png)
+[![](./assets/scorpio-detail.png)](http://images.awspros.world/conky-configurations/scorpio-detail.png)
 
 
 --
