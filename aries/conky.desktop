@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Exec="/home/blake/git/conky-system-monitor/init/conky-init.sh"
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_IN]=Conky
+Name=Conky
+GenericName=ConkySystemMonitor
+Comment[en_IN]=Monitor system hardware statistics
+Comment=Monitor system hardware 
